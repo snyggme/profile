@@ -2,7 +2,7 @@
   "name": "profile-remake",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://snyggme.github.io/",
+  "homepage": "https://snyggme.github.io/profile/",
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

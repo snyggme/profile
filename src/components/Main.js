@@ -19,12 +19,14 @@ class Main extends Component {
         return (
           	<main>
 	      		<div className='main-background' style={this.props.newStyle}></div>
-	      		<Switch>
-	            	<Route exact path='/' component={Home}/>
-	            	<Route path='/skills' component={Skills}/>
-	            	<Route path='/projects' component={Projects}/>
-	            	<Route path='/contacts' component={Contacts}/>
-	        	</Switch>
+                <HashRouter>
+    	      		<Switch>
+    	            	<Route exact path='/' component={Home}/>
+    	            	<Route path='/skills' component={Skills}/>
+    	            	<Route path='/projects' component={Projects}/>
+    	            	<Route path='/contacts' component={Contacts}/>
+    	        	</Switch>
+                </HashRouter>
 	    	</main>
         )
     }
