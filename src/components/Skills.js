@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { CSSTransitionGroup } from 'react-transition-group'
 
 const Item = ({ logo }) => {
 	return (
@@ -19,17 +20,27 @@ class Skills extends Component {
 		}
 	}
 	render() {
+		// const showClass = this.props.show ? '' : ''
+
 		return (
-			<div>
-				<div className='skills-grid'>
-					{skillsLogos.map((item, index) => 
-						<Item logo={item} key={index}/>
-					)}
+			<CSSTransitionGroup
+                    transitionName="example"
+                    transitionAppear={true}
+                    transitionAppearTimeout={1000}>
+				<div>
+				
+					<div className='skills-grid'>
+						{skillsLogos.map((item, index) => 
+							<Item logo={item} key={index}/>
+						)}
+					</div>
+					<div className='skills-story'>
+						<div>
+							My name is Roman or just snygg. I am fan of programming and especially of frontend development. Currently trying to fill this site with projects using HTML5, CSS3 and JavaScript. Also i like computer's hardware and build some stuff with microcontrollers.
+						</div>
+					</div>
 				</div>
-				<p>
-					Skills story
-				</p>
-			</div>
+			</CSSTransitionGroup>
 		)	
 	}
 }

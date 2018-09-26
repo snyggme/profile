@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HashRouter, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Skills from './Skills'
 import Projects from './Projects'
@@ -13,18 +13,19 @@ class Main extends Component {
         }
     }
     render() {
-    	// const style = {
-    	// 	width: ''
-    	// }
+    	const { show } = this.props
+
         return (
           	<main>
-	      		<div className='main-background' style={this.props.newStyle}></div>
-    	      	<Switch>
-    	            <Route exact path='/' component={Home}/>
-    	            <Route path='/skills' component={Skills}/>
-    	            <Route path='/projects' component={Projects}/>
-    	            <Route path='/contacts' component={Contacts}/>
-    	        </Switch>
+	      		<Switch>
+	            	<Route exact path='/' component={Home}/>
+                    
+	            	<Route path='/skills' render={(routeProps) => (
+                        <Skills {...routeProps}/>
+                    )}/>
+	            	<Route path='/projects' component={Projects}/>
+	            	<Route path='/contacts' component={Contacts}/>
+	        	</Switch>
 	    	</main>
         )
     }

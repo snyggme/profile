@@ -164,15 +164,17 @@ main {
     color: white;
     position: relative;
     height: 81vh;
-    width: 87vw;
+    width: 100vw;
     margin: 0 auto;
     top: 83px;
 }
 
 .main-background {
 	position: absolute;
-	width: 100%;
-	height: 100%;
+    height: 81vh;
+    width: 87vw;
+    left: 7%;
+    top: 8%;
 	background: rgba(23, 30, 39, 1);
 	z-index: -1;
 }
@@ -257,7 +259,7 @@ footer {
 .skills-grid {
     position: relative;
     left: 10%;
-    top: 150px;
+    top: 100px;
     display: grid;
     width: 35%;
     grid-template-rows: 1fr 1fr 1fr;
@@ -269,7 +271,7 @@ footer {
 
 .skills-grid-block {
     background: white;
-    height: 160px;
+    height: 190px;
     border-radius: 5px;
     box-shadow: 0 5px 15px 0px rgba(0,0,0,0.1);
     -o-transition: all 0.2s ease-in-out;
@@ -277,20 +279,41 @@ footer {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     display: grid;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
 }
 
 .skills-grid-block img {
-  width: 70px;
-  height: 70px;
+    width: 80px;
+    height: 80px;
 }
 
 .skills-grid-block:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 30px 0px rgba(0,0,0,0.1);
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px 0px rgba(0,0,0,0.1);
 }
 
+.skills-story {
+    color: white;
+    position: absolute;
+    height: 81vh;
+    width: 45vw;
+    left: 49%;
+    top: 0;
+    line-height: 55px;
+    display: grid;
+    word-break: break-all;
+    grid-template-rows: 0.96fr;
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    z-index: 10;
+}
+
+/*.skills-story div {
+    width: 100%;
+}*/
 /*
 ***********************************
     skills end
@@ -299,14 +322,30 @@ footer {
 
 @keyframes main-background-change {
   	0% {
-        width: 100%;
-        left: 0;
+        width: 87vw;
+        left: 7%;
 	}
   	100% { 
-        width: 50%;
-        left: 50%;
+        width: 45vw;
+        left: 49%;
   	}
 }
 
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% { 
+        opacity: 1;
+    }
+}
 
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
 
