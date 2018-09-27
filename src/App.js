@@ -13,30 +13,42 @@ class App extends Component {
                 
             },
             currentPath: '',
-            nextPath: ''
+            nextPath: '',
+            disableLinks: false,
+            showContent: false
         }
     }
     render() {
-        let { newStyle, currentPath, nextPath } = this.state
+        let { newStyle, currentPath, nextPath, disableLinks, showContent } = this.state
 
         if (nextPath === '' && window.location.pathname !== '/') {
             newStyle = {
-                animation: 'main-background-change 1s forwards'
+                animation: 'main-background-change 0.8s forwards'
             }
         }
         return (
           <div>
-            <Header handleClick={(e) => {
-                this.setState({
-                    newStyle: {
-                        animation: 'main-background-change 1s forwards',
-                    },
-                    currentPath: window.location.pathname,
-                    nextPath: getPathname(e.target.href)
-                })
+            <Header disableLinks={disableLinks} 
+                    handleClick={(e) => {
+                        this.setState({
+                            newStyle: {
+                                animation: 'main-background-change 0.8s forwards',
+                            },
+                            currentPath: window.location.pathname,
+                            nextPath: getPathname(e.target.href),
+                            disableLinks: true,
+                            showContent: false
+                        })
             }}/>
-            <div className='main-background' style={newStyle}></div>
-            <Main/>
+            <div    className='main-background' style={newStyle}
+                    onAnimationEnd={() => { 
+                        this.setState({ 
+                            disableLinks: false,
+                            showContent: true 
+                        }) 
+                    }}
+            ></div>
+            <Main showContent={showContent}/>
             <Footer />
           </div>
         )

@@ -20,27 +20,37 @@ class Skills extends Component {
 		}
 	}
 	render() {
-		// const showClass = this.props.show ? '' : ''
+		const show = this.props.show
 
 		return (
-			<CSSTransitionGroup
-                    transitionName="example"
-                    transitionAppear={true}
-                    transitionAppearTimeout={1000}>
-				<div>
-				
-					<div className='skills-grid'>
-						{skillsLogos.map((item, index) => 
-							<Item logo={item} key={index}/>
-						)}
+			<div>
+				{ show ? 
+					<div>
+						<CSSTransitionGroup
+		                    transitionName="example"
+		                    transitionAppear={true}
+		                    transitionAppearTimeout={1000}>
+							<div className='skills-grid'>
+								{skillsLogos.map((item, index) => 
+									<Item logo={item} key={index}/>
+								)}
+							</div>
+					
+						</CSSTransitionGroup>
 					</div>
+					: ''
+				}
+				<CSSTransitionGroup
+	                transitionName="example"
+	                transitionAppear={true}
+	                transitionAppearTimeout={1000}>
 					<div className='skills-story'>
 						<div>
 							My name is Roman or just snygg. I am fan of programming and especially of frontend development. Currently trying to fill this site with projects using HTML5, CSS3 and JavaScript. Also i like computer's hardware and build some stuff with microcontrollers.
 						</div>
 					</div>
-				</div>
-			</CSSTransitionGroup>
+				</CSSTransitionGroup>		
+			</div>
 		)	
 	}
 }

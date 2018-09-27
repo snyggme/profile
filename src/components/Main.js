@@ -13,15 +13,14 @@ class Main extends Component {
         }
     }
     render() {
-    	const { show } = this.props
+    	const { showContent } = this.props
 
         return (
           	<main>
 	      		<Switch>
-	            	<Route exact path='/' component={Home}/>
-                    
+	            	<Route exact path='/' component={Home}/>                   
 	            	<Route path='/skills' render={(routeProps) => (
-                        <Skills {...routeProps}/>
+                        <Skills {...routeProps} show={showContent}/>
                     )}/>
 	            	<Route path='/projects' component={Projects}/>
 	            	<Route path='/contacts' component={Contacts}/>

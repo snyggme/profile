@@ -32,6 +32,10 @@ class Header extends Component {
 	}
     render() {
     	const { menuList } = this.state
+    	const { disableLinks } = this.props
+	// can disable link until animation isnt ended
+	// const disabled = disableLinks ? 'disabled-link' :''
+    	const disabled = disableLinks ? '' :''
 
     	let active = 'home'
     	const path = window.location.pathname
@@ -50,7 +54,9 @@ class Header extends Component {
 					<ul className="navbar-list">
 					    {menuList.map(item => 
 					    	<li className='nav-item'>
-					    		<Link 	className={item.toLowerCase() === active ? 'nav-link active' : 'nav-link'}
+					    		<Link 	className={item.toLowerCase() === active 
+					    					? `nav-link active ${disabled}` 
+					    					: `nav-link ${disabled}`}
 					    				to={item === 'Home' ? '/' : item.toLowerCase()}
 					    				onMouseEnter={animStr}
 					    				onClick={this.props.handleClick}>

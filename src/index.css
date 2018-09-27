@@ -259,7 +259,7 @@ footer {
 .skills-grid {
     position: relative;
     left: 10%;
-    top: 100px;
+    top: 60px;
     display: grid;
     width: 35%;
     grid-template-rows: 1fr 1fr 1fr;
@@ -289,7 +289,7 @@ footer {
 }
 
 .skills-grid-block:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     box-shadow: 0 10px 30px 0px rgba(0,0,0,0.1);
 }
 
@@ -310,13 +310,101 @@ footer {
     font-size: 35px;
     z-index: 10;
 }
-
-/*.skills-story div {
-    width: 100%;
-}*/
 /*
 ***********************************
     skills end
+***********************************
+*/
+/*
+***********************************
+    contacts start
+***********************************
+*/
+.contacts-container {
+    width: 50vw;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.contacts-form-control {
+    font-family: inherit;
+    height: 55px;
+    padding-left: 30px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #dbe2e8;
+    box-shadow: 5px 5px 10px 0 rgba(46,61,73,0.05);
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.contacts-form-control:hover {
+    box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+}
+
+.contacts-form-control:focus {
+    box-shadow: none;
+}
+
+.contacts-header {
+    color: #ad3a4b;
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 45px;
+}
+
+.contacts-form {
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    grid-template-rows: 60px 60px 60px 200px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#email {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#comment {
+    height: 200px;
+    padding-top: 20px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#subject {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.btn {
+    font-family: inherit;
+    /*font-weight: 600;*/
+    color: white;
+    margin: auto;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #dc3545;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.btn:hover {
+    background: #c82333;
+}
+/*
+***********************************
+    contacts end
 ***********************************
 */
 
@@ -347,5 +435,9 @@ footer {
 .example-appear.example-appear-active {
   opacity: 1;
   transition: opacity 1s ease-in-out;
+}
+
+.disabled-link {
+  pointer-events: none;
 }
 
