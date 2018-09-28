@@ -220,6 +220,11 @@ footer {
 	footer end
 ***********************************
 */
+/*
+***********************************
+    home start
+***********************************
+*/
 .home {
 	position: relative;
 	left:15%;
@@ -253,6 +258,11 @@ footer {
 }
 /*
 ***********************************
+    home end
+***********************************
+*/
+/*
+***********************************
     skills start
 ***********************************
 */
@@ -279,17 +289,60 @@ footer {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     display: grid;
-    justify-content: center;
-    align-items: center;
+    grid-template-rows: 1fr 0.7fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: flex-start;
 }
 
-.skills-grid-block img {
-    width: 80px;
-    height: 80px;
+.skills-grid-block i {
+    font-size: 65px;
+    align-self: flex-end;
+    color: rgb(23, 30, 39);
+}
+
+.icon-reactjs:hover {
+    color: #52d3fa;
+}
+
+.icon-html5-alt:hover {
+    color: #f14a29;
+}
+
+.icon-css3-alt:hover {
+    color: #3B5998;
+}
+
+i.icon-javascript-alt, i.icon-nodejs {
+    width: 50px;
+}
+
+.icon-javascript-alt:hover {
+    color:  #f0db4f;
+}
+
+.icon-jquery:hover {
+    color: #0769AD;
+}
+
+.icon-nodejs:hover {
+    color: #66cc33;
+}
+
+.icon-bootstrap:hover {
+    color: #080135;
+}
+
+.icon-sass:hover {
+    color: #c69;
+}
+
+.icon-git:hover {
+    color: #F1502F;
 }
 
 .skills-grid-block:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 0 10px 30px 0px rgba(0,0,0,0.1);
 }
 
@@ -345,13 +398,14 @@ footer {
 
 .contacts-form-control:focus {
     box-shadow: none;
+    border-color: #ad3a4b;
 }
 
 .contacts-header {
     color: #ad3a4b;
     text-align: center;
-    margin-bottom: 70px;
-    font-size: 45px;
+    margin-bottom: 50px;
+    font-size: 40px;
 }
 
 .contacts-form {
@@ -360,7 +414,7 @@ footer {
     margin: 0 auto;
     grid-template-rows: 60px 60px 60px 200px;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
+    grid-gap: 40px;
     justify-content: space-around;
     align-items: center;
 }

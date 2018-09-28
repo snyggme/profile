@@ -4,10 +4,10 @@ import { CSSTransitionGroup } from 'react-transition-group'
 const Item = ({ logo }) => {
 	return (
 		<div className='skills-grid-block'>
-			<div>
-				<img src={logo.src} />
+
+				<i className={logo.class}></i>
 				<div style={{textAlign: 'center', marginTop: '5px'}}>{logo.name}</div>
-			</div>
+
 		</div>
 	)
 }
@@ -57,39 +57,39 @@ class Skills extends Component {
 
 const skillsLogos = [
 	{
-		src: 'https://cdn.iconscout.com/public/images/icon/free/png-512/html5-logo-341eda6a9876c66d-512x512.png',
+		class: 'icon-html5-alt',
 		name: 'HTML5'
 	},
 	{
-		src: 'https://www.shareicon.net/data/512x512/2015/09/08/97876_css_512x512.png',
+		class: 'icon-css3-alt',
 		name: 'CSS3'
 	},
 	{
-		src: 'https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/205/thumb/javascriptlang.png',
+		class: 'icon-javascript-alt',
 		name: 'JavaScript'
 	},
 	{
-		src: 'https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/026/thumb/react.png',
+		class: 'icon-reactjs',
 		name: 'React'
 	},
 	{
-		src: 'http://icons.iconarchive.com/icons/sicons/basic-round-social/512/jquery-icon.png',
+		class: 'icon-jquery',
 		name: 'jQuery'
 	},
 	{
-		src: 'https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/thumb/nodejslogo.png',
+		class: 'icon-nodejs',
 		name: 'NodeJS'
 	},
 	{
-		src: 'http://mareconversionpro.fr/wp-content/uploads/2017/05/bootstrap-logo-300x300.jpg',
+		class: 'icon-bootstrap',
 		name: 'Bootstrap'
 	},
 	{
-		src: 'https://cdn.worldvectorlogo.com/logos/sass-1.svg',
+		class: 'icon-sass',
 		name: 'SCSS'
 	},
 	{
-		src: 'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png',
+		class: 'icon-git',
 		name: 'Git'
 	}
 ]
