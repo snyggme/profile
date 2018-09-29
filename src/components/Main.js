@@ -22,7 +22,9 @@ class Main extends Component {
 	            	<Route path='/skills' render={(routeProps) => (
                         <Skills {...routeProps} show={showContent}/>
                     )}/>
-	            	<Route path='/projects' component={Projects}/>
+	            	<Route path='/projects' render={(routeProps) => (
+                        <Projects {...routeProps} show={showContent}/>
+                    )}/>
 	            	<Route path='/contacts' component={Contacts}/>
 	        	</Switch>
 	    	</main>

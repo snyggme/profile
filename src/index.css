@@ -165,7 +165,6 @@ main {
     position: relative;
     height: 81vh;
     width: 100vw;
-    margin: 0 auto;
     top: 83px;
 }
 
@@ -269,7 +268,7 @@ footer {
 .skills-grid {
     position: absolute;
     left: 10%;
-    top: 12%;
+    top: 8%;
     display: grid;
     width: 35%;
     grid-template-rows: 1fr 1fr 1fr;
@@ -461,40 +460,21 @@ i.icon-javascript-alt, i.icon-nodejs {
     contacts end
 ***********************************
 */
-
-.circle-1 {
-    position: fixed;
-    bottom: 50px;
-    left: -50px;
-    height: 500px;
-    width: 500px;
-    background-color: rgba(23, 30, 39, 0.5);
-    border-radius: 50%;
-    display: inline-block;
-    z-index: -100;
-}
-
-.circle-2 {
-    position: fixed;
-    bottom: 400px;
-    left: 250px;
-    height: 300px;
-    width: 300px;
-    background-color: rgba(66, 244, 217, 0.5);
-    border-radius: 50%;
-    display: inline-block;
-    z-index: 100;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.circle-2:hover {
-
-    transform: scale(2);
+/*
+***********************************
+    projects start
+***********************************
+*/
+.projects-container {
 
 }
+
+/*
+***********************************
+    projects end
+***********************************
+*/
+
 
 @keyframes appear {
     0% {
@@ -505,8 +485,12 @@ i.icon-javascript-alt, i.icon-nodejs {
     }
 }
 
-@keyframes background-100-to-50-right {
+@keyframes background-50-to-50-right {
     0% {
+        width: 42vw;
+        left: 7%;
+    }
+    50% {
         width: 87vw;
         left: 7%;
     }
@@ -516,13 +500,17 @@ i.icon-javascript-alt, i.icon-nodejs {
     }
 }
 
-@keyframes background-50-to-100-left {
+@keyframes background-50-to-50-left {
     0% { 
         width: 45vw;
         left: 49%;
     }
-    100% {
+    50% {
         width: 87vw;
+        left: 7%;
+    }
+    100% {
+        width: 42vw;
         left: 7%;
     }
 }
@@ -538,10 +526,25 @@ i.icon-javascript-alt, i.icon-nodejs {
     }
 }
 
-@keyframes background-50-to-0-right {
+@keyframes background-50-right-to-0-right {
     0% {
         width: 45vw;
         left: 49%;
+    }
+    100% { 
+        width: 0vw;
+        left: 94%;
+    }
+}
+
+@keyframes background-50-left-to-0-right {
+    0% {
+        width: 42vw;
+        left: 7%;
+    }
+    50% {
+        width: 87vw;
+        left: 7%;
     }
     100% { 
         width: 0vw;
@@ -565,23 +568,68 @@ i.icon-javascript-alt, i.icon-nodejs {
         width: 0vw;
         left: 94%;
     }
+    50% {
+        width: 87vw;
+        left: 7%;
+    }
     100% { 
+        width: 42vw;
+        left: 7%;
+    }
+}
+
+@keyframes background-100-to-50-left {
+    0% {
+        width: 87vw;
+        left: 7%;
+    }
+    100% {
+        width: 42vw;
+        left: 7%;
+    }
+}
+
+@keyframes background-100-to-50-right {
+    0% {
+        width: 87vw;
+        left: 7%;
+    }
+    100% {
         width: 45vw;
         left: 49%;
     }
 }
 
-@keyframes anim-dumb-1 {
+@keyframes background-50-to-100-right {
     0% {
+        width: 42vw;
+        left: 7%;
     }
     100% {
+        width: 87vw;
+        left: 7%;
     }
 }
 
-@keyframes anim-dumb-2 {
+@keyframes background-50-to-100-left {
     0% {
+        width: 45vw;
+        left: 49%;
     }
     100% {
+        width: 87vw;
+        left: 7%;
+    }
+}
+
+@keyframes background-0-to-50-right {
+    0% {
+        width: 0vw;
+        left: 94%;
+    }
+    100% {
+        width: 45vw;
+        left: 49%;
     }
 }
 

@@ -9,17 +9,17 @@ export const getPathname = (str) => str.substring(str.lastIndexOf('/'))
 
 const obj = {
 	home_skills: 'background-100-to-50-right 0.8s forwards',
-	home_projects: 'anim-dumb-1 0.1s',
+	home_projects: 'background-100-to-50-left 0.8s forwards',
 	home_contacts: 'background-100-to-0-right 1.5s forwards',
 	skills_home: 'background-50-to-100-left 0.8s forwards', 
-	skills_projects: 'background-50-to-100-left 0.8s forwards',
-	skills_contacts: 'background-50-to-0-right 0.8s forwards',
-	projects_home: 'anim-dumb-2 0.1s',
-	projects_skills: 'background-100-to-50-right 0.8s forwards',
-	projects_contacts: 'background-100-to-0-right 1.5s forwards',
+	skills_projects: 'background-50-to-50-left 1.5s forwards',
+	skills_contacts: 'background-50-right-to-0-right 0.8s forwards',
+	projects_home: 'background-50-to-100-right 0.8s forwards',
+	projects_skills: 'background-50-to-50-right 1.5s forwards',
+	projects_contacts: 'background-50-left-to-0-right 1.5s forwards',
 	contacts_home: 'background-0-to-100-left 1.5s forwards',
-	contacts_skills: 'background-0-to-50-left 0.8s forwards',
-	contacts_projects: 'background-0-to-100-left 1.5s forwards'
+	contacts_skills: 'background-0-to-50-right 0.8s forwards',
+	contacts_projects: 'background-0-to-50-left 1.5s forwards'
 }
 
 /*
@@ -47,7 +47,7 @@ projects ---> home : 'no-changes'
 projects ---> skills : 'background-100-to-50-right'
 	from width 100% to width 50% to right side
 
-projects ---> contacts : 'background-100-to-0-right' 
+projects ---> contacts : 'background-100-to-0-left' 
 	from width 100% to width 0% to right side
 
 contacts ---> home : 'background-0-to-100-left' 
