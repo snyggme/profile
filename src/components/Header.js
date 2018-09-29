@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { animStr } from '../helpers/stringanim.js'
+import { animStr } from '../helpers/stringanim'
 
 class Header extends Component {
 	constructor(props) {

@@ -25,25 +25,3 @@ const Contacts = () => {
 }
 
 export default Contacts
-
-// <form action="" method="GET">
-//               <div class="row justify-content-between">
-//                 <div class="col-6">
-//                   <div class="form-group">
-//                     <input type="text" class="form-control" id="first-name" placeholder="First Name">
-//                   </div>
-//                 </div>
-//                 <div class="col-6">
-//                   <div class="form-group">
-//                     <input type="text" class="form-control" id="last-name" placeholder="Last Name">
-//                   </div>
-//                 </div>
-//               </div>
-//               <div class="form-group">
-// 					    	<input type="email" class="form-control" id="email" placeholder="Email">
-// 					  	</div>
-// 					  	<div class="form-group">
-// 						  	<textarea class="form-control" rows="7" id="comment" placeholder="Comment"></textarea>
-// 						</div>
-// 					 	<button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
-// 					</form>

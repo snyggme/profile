@@ -267,9 +267,9 @@ footer {
 ***********************************
 */
 .skills-grid {
-    position: relative;
+    position: absolute;
     left: 10%;
-    top: 60px;
+    top: 12%;
     display: grid;
     width: 35%;
     grid-template-rows: 1fr 1fr 1fr;
@@ -481,6 +481,74 @@ i.icon-javascript-alt, i.icon-nodejs {
         opacity: 1;
     }
 }
+
+@keyframes background-100-to-50-right {
+    0% {
+        width: 87vw;
+        left: 7%;
+    }
+    100% { 
+        width: 45vw;
+        left: 49%;
+    }
+}
+
+@keyframes background-50-to-100-left {
+    0% { 
+        width: 45vw;
+        left: 49%;
+    }
+    100% {
+        width: 87vw;
+        left: 7%;
+    }
+}
+
+@keyframes background-100-to-0-right {
+    0% {
+        width: 87vw;
+        left: 7%;
+    }
+    100% { 
+        width: 0vw;
+        left: 94%;
+    }
+}
+
+@keyframes background-50-to-0-right {
+    0% {
+        width: 45vw;
+        left: 49%;
+    }
+    100% { 
+        width: 0vw;
+        left: 94%;
+    }
+}
+
+@keyframes background-0-to-100-left {
+    0% {
+        width: 0vw;
+        left: 94%;
+    }
+    100% { 
+        width: 87vw;
+        left: 7%;
+    }
+}
+
+@keyframes background-0-to-50-left {
+    0% {
+        width: 0vw;
+        left: 94%;
+    }
+    100% { 
+        width: 45vw;
+        left: 49%;
+    }
+}
+
+
 
 .example-appear {
   opacity: 0.01;

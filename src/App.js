@@ -3,7 +3,7 @@ import './App.css'
 import Main from './components/Main'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { getPathname } from './helpers/getpath.js'
+import { getPathname, getAnimationName } from './helpers/chooseanim'
 
 class App extends Component {
     constructor(props) {
@@ -27,30 +27,32 @@ class App extends Component {
             }
         }
         return (
-          <div>
-            <Header disableLinks={disableLinks} 
-                    handleClick={(e) => {
-                        this.setState({
-                            newStyle: {
-                                animation: 'main-background-change 0.8s forwards',
-                            },
-                            currentPath: window.location.pathname,
-                            nextPath: getPathname(e.target.href),
-                            disableLinks: true,
-                            showContent: false
-                        })
-            }}/>
-            <div    className='main-background' style={newStyle}
-                    onAnimationEnd={() => { 
-                        this.setState({ 
-                            disableLinks: false,
-                            showContent: true 
-                        }) 
-                    }}
-            ></div>
-            <Main showContent={showContent}/>
-            <Footer />
-          </div>
+            <div>
+                <Header disableLinks={disableLinks} 
+                        handleClick={(e) => {
+                            const nextPath = getPathname(e.target.href)
+                            
+                            this.setState({
+                                newStyle: {
+                                    animation: getAnimationName(window.location.pathname, nextPath),
+                                },
+                                currentPath: window.location.pathname,
+                                nextPath: nextPath,
+                                disableLinks: true,
+                                showContent: false
+                            })
+                }}/>
+                <div    className='main-background' style={newStyle}
+                        onAnimationEnd={() => { 
+                            this.setState({ 
+                                disableLinks: false,
+                                showContent: true 
+                            }) 
+                        }}
+                ></div>
+                <Main showContent={showContent}/>
+                <Footer />
+            </div>
         )
     }
 }
