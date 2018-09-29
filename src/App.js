@@ -12,18 +12,17 @@ class App extends Component {
             newStyle: {
                 
             },
-            currentPath: '',
             nextPath: '',
             disableLinks: false,
             showContent: false
         }
     }
     render() {
-        let { newStyle, currentPath, nextPath, disableLinks, showContent } = this.state
+        let { newStyle, nextPath, disableLinks, showContent } = this.state
 
         if (nextPath === '' && window.location.pathname !== '/') {
             newStyle = {
-                animation: 'main-background-change 0.8s forwards'
+                animation: getAnimationName('/home', window.location.pathname)
             }
         }
         return (
@@ -31,16 +30,19 @@ class App extends Component {
                 <Header disableLinks={disableLinks} 
                         handleClick={(e) => {
                             const nextPath = getPathname(e.target.href)
+                            const currentPath = window.location.pathname
+
+                            if (nextPath !== currentPath) {
+                                this.setState({
+                                    newStyle: {
+                                        animation: getAnimationName(currentPath, nextPath),
+                                    },
+                                    nextPath: nextPath,
+                                    disableLinks: true,
+                                    showContent: false
+                                })  
+                            }
                             
-                            this.setState({
-                                newStyle: {
-                                    animation: getAnimationName(window.location.pathname, nextPath),
-                                },
-                                currentPath: window.location.pathname,
-                                nextPath: nextPath,
-                                disableLinks: true,
-                                showContent: false
-                            })
                 }}/>
                 <div    className='main-background' style={newStyle}
                         onAnimationEnd={() => { 

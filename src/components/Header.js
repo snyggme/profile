@@ -33,9 +33,7 @@ class Header extends Component {
     render() {
     	const { menuList } = this.state
     	const { disableLinks } = this.props
-	// can disable link until animation isnt ended
-	// const disabled = disableLinks ? 'disabled-link' :''
-    	const disabled = disableLinks ? '' :''
+    	const disabled = disableLinks ? 'disabled-link' :''
 
     	let active = 'home'
     	const path = window.location.pathname
@@ -73,7 +71,7 @@ class Header extends Component {
 					<div className="line line-down"></div>
 				</button>
 				<button id='header-logo'>
-					<Link className='header-logo-link' to='/'>s</Link>
+					<Link className={`header-logo-link ${disabled}`} to='/' onClick={this.props.handleClick}>s</Link>
 				</button>
 			</header>
 		)

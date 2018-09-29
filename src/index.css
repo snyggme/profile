@@ -462,15 +462,38 @@ i.icon-javascript-alt, i.icon-nodejs {
 ***********************************
 */
 
-@keyframes main-background-change {
-  	0% {
-        width: 87vw;
-        left: 7%;
-	}
-  	100% { 
-        width: 45vw;
-        left: 49%;
-  	}
+.circle-1 {
+    position: fixed;
+    bottom: 50px;
+    left: -50px;
+    height: 500px;
+    width: 500px;
+    background-color: rgba(23, 30, 39, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    z-index: -100;
+}
+
+.circle-2 {
+    position: fixed;
+    bottom: 400px;
+    left: 250px;
+    height: 300px;
+    width: 300px;
+    background-color: rgba(66, 244, 217, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 100;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.circle-2:hover {
+
+    transform: scale(2);
+
 }
 
 @keyframes appear {
@@ -548,7 +571,19 @@ i.icon-javascript-alt, i.icon-nodejs {
     }
 }
 
+@keyframes anim-dumb-1 {
+    0% {
+    }
+    100% {
+    }
+}
 
+@keyframes anim-dumb-2 {
+    0% {
+    }
+    100% {
+    }
+}
 
 .example-appear {
   opacity: 0.01;

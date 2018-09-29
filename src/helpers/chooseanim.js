@@ -1,20 +1,20 @@
 export const getAnimationName = (currPath, nextPath) => {
 	const newCurrPath = currPath === '/' ? 'home' : currPath.substring(1)
-	const newNextPath = nextPath === '' ? 'home' : nextPath
+	const newNextPath = nextPath === '/' ? 'home' : nextPath.substring(1)
 
 	return obj[`${newCurrPath}_${newNextPath}`]
 }
 
-export const getPathname = (str) => str.substring(str.lastIndexOf('/') + 1)
+export const getPathname = (str) => str.substring(str.lastIndexOf('/'))
 
 const obj = {
 	home_skills: 'background-100-to-50-right 0.8s forwards',
-	home_projects: '',
+	home_projects: 'anim-dumb-1 0.1s',
 	home_contacts: 'background-100-to-0-right 1.5s forwards',
 	skills_home: 'background-50-to-100-left 0.8s forwards', 
 	skills_projects: 'background-50-to-100-left 0.8s forwards',
 	skills_contacts: 'background-50-to-0-right 0.8s forwards',
-	projects_home: '',
+	projects_home: 'anim-dumb-2 0.1s',
 	projects_skills: 'background-100-to-50-right 0.8s forwards',
 	projects_contacts: 'background-100-to-0-right 1.5s forwards',
 	contacts_home: 'background-0-to-100-left 1.5s forwards',

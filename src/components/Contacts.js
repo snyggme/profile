@@ -6,9 +6,7 @@ const Contacts = () => {
 		<CSSTransitionGroup
 	        transitionName="example"
 	        transitionAppear={true}
-	        transitionAppearTimeout={1000}
-	        transitionEnterTimeout={1000}
-	        transitionLeaveTimeout={1000}>
+	        transitionAppearTimeout={1000}>
 	        <div className='contacts-container'>
 	        	<h3 className="contacts-header">Have any questions?</h3>
 	        	<form action='' method='GET' className='contacts-form'>
@@ -20,6 +18,7 @@ const Contacts = () => {
 	        		<button type="submit" className="btn">Submit</button>
 	        	</form>
 	        </div>
+
 		</CSSTransitionGroup>
 	)
 }
