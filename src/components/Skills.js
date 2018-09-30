@@ -22,8 +22,7 @@ class Skills extends Component {
 
 		return (
 			<div>
-				{ show ? 
-					<div>
+				{ show &&
 						<CSSTransitionGroup
 		                    transitionName="example"
 		                    transitionAppear={true}
@@ -33,10 +32,7 @@ class Skills extends Component {
 									<Item logo={item} key={index}/>
 								)}
 							</div>
-					
 						</CSSTransitionGroup>
-					</div>
-					: ''
 				}
 				<CSSTransitionGroup
 	                transitionName="example"

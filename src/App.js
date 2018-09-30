@@ -41,8 +41,7 @@ class App extends Component {
                                     disableLinks: true,
                                     showContent: false
                                 })  
-                            }
-                            
+                            }        
                 }}/>
                 <div    className='main-background' style={newStyle}
                         onAnimationEnd={() => { 

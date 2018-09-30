@@ -414,7 +414,6 @@ i.icon-javascript-alt, i.icon-nodejs {
     grid-template-rows: 60px 60px 60px 200px;
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
-    justify-content: space-around;
     align-items: center;
 }
 
@@ -437,7 +436,6 @@ i.icon-javascript-alt, i.icon-nodejs {
 
 .btn {
     font-family: inherit;
-    /*font-weight: 600;*/
     color: white;
     margin: auto;
     width: 200px;
@@ -466,7 +464,18 @@ i.icon-javascript-alt, i.icon-nodejs {
 ***********************************
 */
 .projects-container {
+    position: relative;
+    left: 7%;
+    width: 87%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
 
+.projects-imgs {
+    align-self: center;
 }
 
 /*
@@ -474,17 +483,6 @@ i.icon-javascript-alt, i.icon-nodejs {
     projects end
 ***********************************
 */
-
-
-@keyframes appear {
-    0% {
-        opacity: 0;
-    }
-    100% { 
-        opacity: 1;
-    }
-}
-
 @keyframes background-50-to-50-right {
     0% {
         width: 42vw;
