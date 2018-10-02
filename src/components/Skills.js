@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
-
-const Item = ({ logo }) => {
-	return (
-		<div className='skills-grid-block'>
-			<i className={logo.class}></i>
-			<div style={{textAlign: 'center', marginTop: '5px'}}>{logo.name}</div>
-		</div>
-	)
-}
+import { Item } from './Item'
 
 class Skills extends Component {
 	constructor(props) {
@@ -23,16 +15,16 @@ class Skills extends Component {
 		return (
 			<div>
 				{ show &&
-						<CSSTransitionGroup
-		                    transitionName="example"
-		                    transitionAppear={true}
-		                    transitionAppearTimeout={1000}>
-							<div className='skills-grid'>
-								{skillsLogos.map((item, index) => 
-									<Item logo={item} key={index}/>
-								)}
-							</div>
-						</CSSTransitionGroup>
+					<CSSTransitionGroup
+		                transitionName="example"
+		                transitionAppear={true}
+		                transitionAppearTimeout={1000}>
+						<div className='skills-grid'>
+							{skillsLogos.map((item, index) => 
+								<Item logo={item} key={index}/>
+							)}
+						</div>
+					</CSSTransitionGroup>
 				}
 				<CSSTransitionGroup
 	                transitionName="example"

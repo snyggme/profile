@@ -7,6 +7,7 @@ import Contacts from './Contacts'
     	
 const Main = (props) => {
     const { showContent } = props
+    
     return (
         <main>
 	      	<Switch>
@@ -22,4 +23,5 @@ const Main = (props) => {
 	    </main>
     )
 }
+
 export default Main

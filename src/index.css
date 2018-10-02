@@ -150,6 +150,10 @@ body {
 	text-decoration: none;
 	color: #ad3a4b;
 }
+
+.header-logo-link:hover {
+    color: black;
+}
 /*
 ***********************************
 	header end
@@ -165,7 +169,7 @@ main {
     position: relative;
     height: 81vh;
     width: 100vw;
-    top: 83px;
+    top: 78px;
 }
 
 .main-background {
@@ -292,6 +296,20 @@ footer {
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: flex-start;
+}
+
+.skills-grid-block i {
+    font-size: 65px;
+    align-self: flex-end;
+    color: rgb(23, 30, 39);
+}
+
+.icon-reactjs:hover {
+    color: #52d3fa;
+}
+
+.icon-html5-alt:hover {
+    color: #f14a29;
 }
 
 .skills-grid-block i {
@@ -463,10 +481,32 @@ i.icon-javascript-alt, i.icon-nodejs {
     projects start
 ***********************************
 */
-.projects-container {
+#carousel {
     position: relative;
-    left: 7%;
-    width: 87%;
+    width: 87vw;
+    height: 81vh;
+    margin: auto;
+    overflow: hidden;
+}
+
+.projects-carousel {
+    width: 9999px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    list-style: none;
+    transition: all 0.8s;
+}
+
+.projects-carousel li {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 87vw;
+}
+
+.projects-container {
     height: 100%;
     display: grid;
     grid-template-rows: 1fr;
@@ -478,6 +518,49 @@ i.icon-javascript-alt, i.icon-nodejs {
     align-self: center;
 }
 
+.projects-imgs img {
+    max-width: 80%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+}
+
+.arrow {
+    position: absolute;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    top: 45%;
+    color: black;
+    cursor: pointer;
+    font-size: 50px;
+    z-index: 100;
+}
+
+.arrow:hover {
+    background-color: #e0e0e0;
+}
+
+.arrow-left i {
+    position: relative;
+    left: 27%;
+    top: -10%;
+}
+
+.arrow-right i {
+    position: relative;
+    left: 38%;
+    top: -10%;
+}
+
+.arrow-left {
+    left: 0%;
+}
+
+.arrow-right {
+    right: 0%;
+}
 /*
 ***********************************
     projects end
@@ -644,3 +727,20 @@ i.icon-javascript-alt, i.icon-nodejs {
   pointer-events: none;
 }
 
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
