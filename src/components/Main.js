@@ -18,7 +18,9 @@ const Main = (props) => {
 	           	<Route path='/projects' render={(routeProps) => (
                     <Projects {...routeProps} show={showContent}/>
                 )}/>
-	           	<Route path='/contacts' component={Contacts}/>
+	           	<Route path='/contacts' render={(routeProps) => (
+                    <Contacts {...routeProps} show={showContent}/>
+                )}/>
 	        </Switch>
 	    </main>
     )

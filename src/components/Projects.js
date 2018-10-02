@@ -13,12 +13,16 @@ class Projects extends Component {
     }
     handleLeftButton(e) {
     	this.setState(prevState => ({
-    		carouselMargin: prevState.carouselMargin + prevState.carouselWidth 
+    		carouselMargin: prevState.carouselMargin === 0 
+    			? -prevState.carouselWidth * (projects.length - 1) 
+    			: prevState.carouselMargin + prevState.carouselWidth
     	}))
     }
     handleRightButton(e) {
 		this.setState(prevState => ({
-    		carouselMargin: prevState.carouselMargin === -348 ? prevState.carouselMargin - prevState.carouselWidth : 0 
+    		carouselMargin: prevState.carouselMargin === -prevState.carouselWidth * (projects.length - 1)
+    			? 0 
+    			: prevState.carouselMargin - prevState.carouselWidth
     	}))
     }
     render() {
@@ -38,21 +42,29 @@ class Projects extends Component {
 		        			onClick={this.handleRightButton}>
 		        			<i className="fa fa-angle-right" aria-hidden="true"></i>
 		        	</div>
-			        <ul className='projects-carousel' style={{marginLeft: `${this.state.carouselMargin}vw`}}>
+			        <ul className='carousel-elements-container' style={{marginLeft: `${this.state.carouselMargin}vw`}}>
 					{
 						projects.map(item => 
 							<li>
-								<div className='projects-container'>
-									<div className='projects-imgs'><img src={item.src} /></div>
+								<div className='project-container'>
+									<div className='project-imgs'><img src={item.src} /></div>
 									{ show && 
 										<CSSTransitionGroup
 									        transitionName="example"
 									        transitionAppear={true}
 									        transitionAppearTimeout={1000}>
-											<div style={{color: 'black'}}>
-												<h2>{item.name}</h2>
-												<div>{item.description}</div>
-												<div>{item.technologies[0]}</div>
+											<div className='project-definition' style={{color: 'black'}}>
+												<h2 className='project-name'>{item.name}</h2>
+												<div className='project-description'>{item.description}</div>
+												<div className='project-technologies'>{
+													item.technologies.map(item => 
+														<span>{item}</span>
+													)}
+												</div>
+												<div className='project-external-links'>
+													<a href={item.code}>View Project</a>
+													<a href={item.code}>View Code</a>
+												</div>
 											</div>
 										</CSSTransitionGroup>
 									}
@@ -71,20 +83,23 @@ export default Projects
 const projects = [ 
 	{
 		src: './images/twitchtv.png',
-		description: 'watch your favorite twitch streams',
-		technologies: ['react'],
-		name: 'TwitchTV'
+		description: 'App displays the status of a set of Twitch Streamers. You can delete or add your favourite one.',
+		technologies: ['JS', 'ReactJS', 'SASS', 'Twitch API'],
+		name: 'TwitchTV',
+		code: ''
 	},
 	{
 		src: './images/tictactoe.png',
-		description: 'tic tac toe game with one player',
-		technologies: ['react'],
-		name: 'Tic-Tac-Toe'
+		description: 'Play the classic game of X\'s and O\'s vs. the computer.',
+		technologies: ['JS', 'ReactJS','SASS'],
+		name: 'Tic-Tac-Toe',
+		code: ''
 	},
 	{
 		src: './images/pomodoro.png',
-		description: 'app helps you to manage your work time',
-		technologies: ['react'],
-		name: 'Pomodoro Clock'
+		description: 'It\'s an easy to use, flexible Pomodoro Technique timer. Clean interface, ability to pause or reset the timer intervals, audio notifications at the end of a timer period.',
+		technologies: ['JS', 'ReactJS', 'SASS'],
+		name: 'Pomodoro Clock',
+		code: ''
 	}
 ]
