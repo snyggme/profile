@@ -529,9 +529,15 @@ i.icon-javascript-alt, i.icon-nodejs {
     grid-template-columns: 1fr 1fr;
 }
 
+.project-external-links div {
+    width: 70%;
+}
+
 .project-external-links a {
+    position: relative;
     margin-top: 80px;
     margin-right: 15px;
+    margin-bottom: 5px;
     display: inline-block;
     font-size: 1.3vw;
     text-decoration: none;
@@ -541,6 +547,27 @@ i.icon-javascript-alt, i.icon-nodejs {
 
 .project-external-links a:hover {
     color: #ad3a4b;
+}
+
+.project-external-links a:before {
+    content: "";
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    background-color: #ad3a4b;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-external-links a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 .project-technologies span {

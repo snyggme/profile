@@ -66,8 +66,12 @@ class Projects extends Component {
 													)}
 												</div>
 												<div className='project-external-links'>
-													<a href={item.codepen} target='_blank'>View Project</a>
-													<a href={item.github}>View Code</a>
+													<div>
+														<a href={item.codepen} target='_blank'>View Project</a>
+													</div>
+													<div>
+														<a href={item.github}>View Code</a>
+													</div>
 												</div>
 											</div>
 										</CSSTransitionGroup>
