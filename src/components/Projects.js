@@ -54,16 +54,20 @@ class Projects extends Component {
 									        transitionAppear={true}
 									        transitionAppearTimeout={1000}>
 											<div className='project-definition' style={{color: 'black'}}>
-												<h2 className='project-name'>{item.name}</h2>
-												<div className='project-description'>{item.description}</div>
+												<h2 className='project-name'>
+													{item.name}
+												</h2>
+												<div className='project-description'>
+													{item.description}
+												</div>
 												<div className='project-technologies'>{
 													item.technologies.map(item => 
 														<span>{item}</span>
 													)}
 												</div>
 												<div className='project-external-links'>
-													<a href={item.code}>View Project</a>
-													<a href={item.code}>View Code</a>
+													<a href={item.codepen} target='_blank'>View Project</a>
+													<a href={item.github}>View Code</a>
 												</div>
 											</div>
 										</CSSTransitionGroup>
@@ -86,20 +90,71 @@ const projects = [
 		description: 'App displays the status of a set of Twitch Streamers. You can delete or add your favourite one.',
 		technologies: ['JS', 'ReactJS', 'SASS', 'Twitch API'],
 		name: 'TwitchTV',
-		code: ''
+		codepen: '',
+		github: ''
 	},
 	{
 		src: './images/tictactoe.png',
 		description: 'Play the classic game of X\'s and O\'s vs. the computer.',
 		technologies: ['JS', 'ReactJS','SASS'],
 		name: 'Tic-Tac-Toe',
-		code: ''
+		codepen: '',
+		github: ''
 	},
 	{
 		src: './images/pomodoro.png',
 		description: 'It\'s an easy to use, flexible Pomodoro Technique timer. Clean interface, ability to pause or reset the timer intervals, audio notifications at the end of a timer period.',
 		technologies: ['JS', 'ReactJS', 'SASS'],
 		name: 'Pomodoro Clock',
-		code: ''
+		codepen: 'https://codepen.io/snygg/full/yqyOyr/',
+		github: ''
+	},
+	{
+		src: './images/drummachine.png',
+		description: 'Explore drumming with two unique sound banks. Power controls, adjusting volume.',
+		technologies: ['JS', 'ReactJS', 'SASS', 'HTML5'],
+		name: 'Drum Machine',
+		codepen: 'https://codepen.io/snygg/full/eKarZZ/',
+		github: ''
+	},
+	{
+		src: './images/localweather.png',
+		description: 'Simple web app that displays the local weather forecast using HTML5 Geolocation to get user location and to look for the weather depending on the city.',
+		technologies: ['jQuery', 'HTML5', 'CSS', 'Weather API'],
+		name: 'Local Weather App',
+		codepen: 'https://codepen.io/snygg/full/ZrbxEv/',
+		github: ''
+	},
+	{
+		src: './images/markdown.png',
+		description: 'Converts and live previews plain text to HTML using markedjs compiler and parser.',
+		technologies: ['JS', 'ReactJS', 'markedjs', 'SASS'],
+		name: 'Markdown Previewer',
+		codepen: 'https://codepen.io/snygg/full/xzeRXo/',
+		github: ''
+	},
+	{
+		src: './images/wikipedia.png',
+		description: 'Simple interface to the Wikipedia API that allows to search articles and display 10 possible article snippets for the user to select one.',
+		technologies: ['jQuery', 'HTML5', 'CSS', 'MediaWiki API'],
+		name: 'Wikipedia Viewer',
+		codepen: 'https://codepen.io/snygg/full/JpbWMm/',
+		github: ''
+	},
+	{
+		src: './images/randomquote.png',
+		description: 'Makes an AJAX call to a random quote generator API and displays the response on the page. You can tweet it and share with others.',
+		technologies: ['jQuery', 'HTML5', 'CSS', 'Quote API'],
+		name: 'Random Quote Machine',
+		codepen: 'https://codepen.io/snygg/full/WMeKbY/',
+		github: ''
+	},
+	{
+		src: './images/this.png',
+		description: 'This site itself. Uses react-router components to navigate through the site. Implements CSS and JS animation',
+		technologies: ['JS', 'ReactJS', 'React-Router-v4'],
+		name: 'Portfolio Site',
+		codepen: 'https://codepen.io/snygg/full/WMeKbY/',
+		github: ''
 	}
 ]
