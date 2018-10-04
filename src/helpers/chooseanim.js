@@ -10,13 +10,13 @@ export const getPathname = (str) => str.substring(str.lastIndexOf('/'))
 const obj = {
 	home_skills: 'background-100-to-50-right 0.8s forwards',
 	home_projects: 'background-100-to-50-left 0.8s forwards',
-	home_contacts: 'background-100-to-0-right 1.5s forwards',
+	home_contacts: 'background-100-to-0-right 1.1s forwards',
 	skills_home: 'background-50-to-100-left 0.8s forwards', 
 	skills_projects: 'background-50-to-50-left 1.5s forwards',
 	skills_contacts: 'background-50-right-to-0-right 0.8s forwards',
 	projects_home: 'background-50-to-100-right 0.8s forwards',
 	projects_skills: 'background-50-to-50-right 1.5s forwards',
-	projects_contacts: 'background-50-left-to-0-right 1.5s forwards',
+	projects_contacts: 'background-50-left-to-0-right 1.1s forwards',
 	contacts_home: 'background-0-to-100-left 1.5s forwards',
 	contacts_skills: 'background-0-to-50-right 0.8s forwards',
 	contacts_projects: 'background-0-to-50-left 1.5s forwards'

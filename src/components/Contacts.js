@@ -1,16 +1,18 @@
 import React from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-const Contacts = (props) => {
-	const show = props.show
-
+const Contacts = ({ show }) => {
 	return (
 		<div>
 			{ show &&
 				<CSSTransitionGroup
 			        transitionName="example"
 			        transitionAppear={true}
-			        transitionAppearTimeout={800}>
+			        transitionEnter={false}
+		        	transitionLeave={false}
+		        	transitionAppearTimeout={800}
+		        	transitionEnterTimeout={0}
+		        	transitionLeaveTimeout={0}>
 			        <div className='contacts-container'>
 			        	<h3 className="contacts-header">Have any questions?</h3>
 			        	<form action='' method='GET' className='contacts-form'>

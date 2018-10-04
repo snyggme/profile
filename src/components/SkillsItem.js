@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Item = ({ logo }) => {
+export const SkillsItem = ({ logo }) => {
 	return (
 		<div className='skills-grid-block'>
 			<i className={logo.class}></i>

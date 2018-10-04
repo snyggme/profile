@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
+import { ProjectsItem } from './ProjectsItem'
 
 class Projects extends Component {
 	constructor(props) {
@@ -32,7 +33,11 @@ class Projects extends Component {
 			<CSSTransitionGroup
 		        transitionName="example"
 		        transitionAppear={true}
-		        transitionAppearTimeout={1000}>
+		        transitionEnter={false}
+		        transitionLeave={false}
+		        transitionAppearTimeout={1000}
+		        transitionEnterTimeout={0}
+		        transitionLeaveTimeout={0}>
 		        <div id='carousel'>
 		        	<div 	className='arrow arrow-left'
 		        			onClick={this.handleLeftButton}>
@@ -42,42 +47,11 @@ class Projects extends Component {
 		        			onClick={this.handleRightButton}>
 		        			<i className="fa fa-angle-right" aria-hidden="true"></i>
 		        	</div>
-			        <ul className='carousel-elements-container' style={{marginLeft: `${this.state.carouselMargin}vw`}}>
+			        <ul className='carousel-elements-container' 
+			        	style={{marginLeft: `${this.state.carouselMargin}vw`}}>
 					{
 						projects.map(item => 
-							<li>
-								<div className='project-container'>
-									<div className='project-imgs'><img src={item.src} /></div>
-									{ show && 
-										<CSSTransitionGroup
-									        transitionName="example"
-									        transitionAppear={true}
-									        transitionAppearTimeout={1000}>
-											<div className='project-definition' style={{color: 'black'}}>
-												<h2 className='project-name'>
-													{item.name}
-												</h2>
-												<div className='project-description'>
-													{item.description}
-												</div>
-												<div className='project-technologies'>{
-													item.technologies.map(item => 
-														<span>{item}</span>
-													)}
-												</div>
-												<div className='project-external-links'>
-													<div>
-														<a href={item.codepen} target='_blank'>View Project</a>
-													</div>
-													<div>
-														<a href={item.github}>View Code</a>
-													</div>
-												</div>
-											</div>
-										</CSSTransitionGroup>
-									}
-								</div>
-							</li>)
+							<ProjectsItem {...item} show={show} key={item.name.toString()}/>)
 					}
 					</ul>
 				</div>

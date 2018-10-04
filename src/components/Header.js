@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { animStr } from '../helpers/stringanim'
+import { HeaderItem } from './HeaderItem' 
+
 
 class Header extends Component {
 	constructor(props) {
@@ -51,16 +52,11 @@ class Header extends Component {
 				}}>
 					<ul className="navbar-list">
 					    {menuList.map(item => 
-					    	<li className='nav-item'>
-					    		<Link 	className={item.toLowerCase() === active 
-					    					? `nav-link active ${disabled}` 
-					    					: `nav-link ${disabled}`}
-					    				to={item === 'Home' ? '/' : item.toLowerCase()}
-					    				onMouseEnter={animStr}
-					    				onClick={this.props.handleClick}>
-					    			{item.toUpperCase()}
-					    		</Link>
-					    	</li>
+					    	<HeaderItem item={item} 
+					    				active={active} 
+					    				onClick={this.props.handleClick} 
+					    				disabled={disabled}
+					    				key={item.toString()}/>
 					    )}
 					</ul>
 				</nav>
@@ -78,5 +74,4 @@ class Header extends Component {
 	}
 }
 
-// propTypes
 export default Header

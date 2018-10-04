@@ -13,8 +13,7 @@ const Footer = () => {
 				<a href="https://www.freecodecamp.org/fccb0535177" className='link-fcc'>
 					<i className="fa fa-free-code-camp"></i>
 				</a>
-			</div>
-			
+			</div>		
 		</footer>
 	)
 }

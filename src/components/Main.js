@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Skills from './Skills'
 import Projects from './Projects'
 import Contacts from './Contacts'
-    	
+
 const Main = (props) => {
     const { showContent } = props
     

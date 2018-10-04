@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
-import { Item } from './Item'
+import { SkillsItem } from './SkillsItem'
 
 class Skills extends Component {
 	constructor(props) {
@@ -18,10 +18,14 @@ class Skills extends Component {
 					<CSSTransitionGroup
 		                transitionName="example"
 		                transitionAppear={true}
-		                transitionAppearTimeout={1000}>
+		                transitionEnter={false}
+				        transitionLeave={false}
+				        transitionAppearTimeout={1000}
+				        transitionEnterTimeout={0}
+				        transitionLeaveTimeout={0}>
 						<div className='skills-grid'>
 							{skillsLogos.map((item, index) => 
-								<Item logo={item} key={index}/>
+								<SkillsItem logo={item} key={index}/>
 							)}
 						</div>
 					</CSSTransitionGroup>
@@ -29,7 +33,11 @@ class Skills extends Component {
 				<CSSTransitionGroup
 	                transitionName="example"
 	                transitionAppear={true}
-	                transitionAppearTimeout={1000}>
+	                transitionEnter={false}
+			        transitionLeave={false}
+			        transitionAppearTimeout={1000}
+			        transitionEnterTimeout={0}
+			        transitionLeaveTimeout={0}>
 					<div className='skills-story'>
 						<div>
 							My name is Roman or just snygg. I am fan of programming and especially of frontend development. Currently trying to fill this site with projects using HTML5, CSS3 and JavaScript. Also i like computer's hardware and build some stuff with microcontrollers.
