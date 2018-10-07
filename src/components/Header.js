@@ -67,7 +67,7 @@ class Header extends Component {
 					<div className="line line-down"></div>
 				</button>
 				<button id='header-logo'>
-					<Link className={`header-logo-link ${disabled}`} to='/' onClick={this.props.handleClick}>s</Link>
+					<Link className={`header-logo-link ${disabled}`} to='' onClick={this.props.handleClick}>s</Link>
 				</button>
 			</header>
 		)

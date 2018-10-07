@@ -132,7 +132,7 @@ const projects = [
 		description: 'This site itself. Uses react-router components to navigate through the site. Implements CSS and JS animation',
 		technologies: ['JS', 'ReactJS', 'React-Router-v4'],
 		name: 'Portfolio Site',
-		project: 'https://codepen.io/snygg/full/WMeKbY/',
+		project: 'https://snyggme.github.io/profile/',
 		github: 'https://github.com/snyggme/profile'
 	}
 ]

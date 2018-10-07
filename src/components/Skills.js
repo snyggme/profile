@@ -1,30 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
 import { SkillsItem } from './SkillsItem'
 
-export const Skills = (props) => {
+const Skills = (props) => {
+	const show = props.show
 
-		const show = props.show
-
-		return (
-			<div style={{height: '100%'}}>
-				{ show &&
-					<CSSTransitionGroup
-		                transitionName="example"
-		                transitionAppear={true}
-		                transitionEnter={false}
-				        transitionLeave={false}
-				        transitionAppearTimeout={1000}
-				        transitionEnterTimeout={0}
-				        transitionLeaveTimeout={0}
-				        style={{display: 'block', position: 'relative', height: '100%'}}>
-						<div className='skills-grid'>
-							{skillsLogos.map((item, index) => 
-								<SkillsItem logo={item} key={index}/>
-							)}
-						</div>
-					</CSSTransitionGroup>
-				}
+	return (
+		<div style={{height: '100%'}}>
+			{ show &&
 				<CSSTransitionGroup
 	                transitionName="example"
 	                transitionAppear={true}
@@ -32,15 +15,31 @@ export const Skills = (props) => {
 			        transitionLeave={false}
 			        transitionAppearTimeout={1000}
 			        transitionEnterTimeout={0}
-			        transitionLeaveTimeout={0}>
-					<div className='skills-story'>
-						<div>
-							My name is Roman or just snygg. I am fan of programming and especially of frontend development. Currently trying to fill this site with projects using HTML5, CSS3 and JavaScript. Also i like computer's hardware and build some stuff with microcontrollers.
-						</div>
+			        transitionLeaveTimeout={0}
+			        style={{display: 'block', position: 'relative', height: '100%'}}>
+					<div className='skills-grid'>
+						{skillsLogos.map((item, index) => 
+							<SkillsItem logo={item} key={index}/>
+						)}
 					</div>
-				</CSSTransitionGroup>		
-			</div>
-		)	
+				</CSSTransitionGroup>
+			}
+			<CSSTransitionGroup
+	            transitionName="example"
+	            transitionAppear={true}
+	            transitionEnter={false}
+			    transitionLeave={false}
+			    transitionAppearTimeout={1000}
+			    transitionEnterTimeout={0}
+			    transitionLeaveTimeout={0}>
+				<div className='skills-story'>
+					<div>
+						My name is Roman or just snygg. I am fan of programming and especially of frontend development. Currently trying to fill this site with projects. Also i like computer's hardware and to build some stuff with microcontrollers.
+					</div>
+				</div>
+			</CSSTransitionGroup>		
+		</div>
+	)	
 }
 
 const skillsLogos = [
@@ -83,4 +82,3 @@ const skillsLogos = [
 ]
 
 export default Skills
-
