@@ -2,7 +2,7 @@ import React from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
 
 export const ProjectsItem = (props) => {
-	const { show, src, name, description, technologies, codepen, github } = props
+	const { show, src, name, description, technologies, project, github } = props
 
 	return(
 		<li>
@@ -31,10 +31,10 @@ export const ProjectsItem = (props) => {
 							</div>
 							<div className='project-external-links'>
 								<div>
-									<a href={codepen} target='_blank'>View Project</a>
+									<a href={project} target='_blank'>View Project</a>
 								</div>
 								<div>
-									<a href={github}>View Code</a>
+									<a href={github} target='_blank'>View Code</a>
 								</div>
 							</div>
 						</div>

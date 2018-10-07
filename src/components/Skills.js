@@ -2,18 +2,12 @@ import React, { Component } from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
 import { SkillsItem } from './SkillsItem'
 
-class Skills extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
+export const Skills = (props) => {
 
-		}
-	}
-	render() {
-		const show = this.props.show
+		const show = props.show
 
 		return (
-			<div>
+			<div style={{height: '100%'}}>
 				{ show &&
 					<CSSTransitionGroup
 		                transitionName="example"
@@ -22,7 +16,8 @@ class Skills extends Component {
 				        transitionLeave={false}
 				        transitionAppearTimeout={1000}
 				        transitionEnterTimeout={0}
-				        transitionLeaveTimeout={0}>
+				        transitionLeaveTimeout={0}
+				        style={{display: 'block', position: 'relative', height: '100%'}}>
 						<div className='skills-grid'>
 							{skillsLogos.map((item, index) => 
 								<SkillsItem logo={item} key={index}/>
@@ -46,7 +41,6 @@ class Skills extends Component {
 				</CSSTransitionGroup>		
 			</div>
 		)	
-	}
 }
 
 const skillsLogos = [

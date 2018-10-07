@@ -3,7 +3,7 @@ import { CSSTransitionGroup } from 'react-transition-group'
 
 const Contacts = ({ show }) => {
 	return (
-		<div>
+		<div style={{height: '100%'}}>
 			{ show &&
 				<CSSTransitionGroup
 			        transitionName="example"
@@ -20,7 +20,7 @@ const Contacts = ({ show }) => {
 			        		<input required type="text" className="contacts-form-control" id="last-name" placeholder="Last Name" />
 			        		<input type="text" className="contacts-form-control" id="subject" placeholder="Subject" />
 			        		<input required type="email" className="contacts-form-control" id="email" placeholder="Email" />
-			        		<textarea className="contacts-form-control" rows="2" id="comment" placeholder="Comment"></textarea>
+			        		<textarea className="contacts-form-control" id="comment" placeholder="Comment"></textarea>
 			        		<button type="submit" className="btn">Submit</button>
 			        	</form>
 			        </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { animStr } from '../helpers/stringanim.js'
 import { CSSTransitionGroup } from 'react-transition-group'
-
+ 
 const Home = () => {
 	return (
 		<CSSTransitionGroup

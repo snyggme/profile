@@ -20,8 +20,8 @@ body {
 	background: none;
 	border: none;
 	outline: none;
-	top: 28px;
-  	right: 150px;
+	top: 2.5%;
+  	right: 8%;
   	width: 50px;
   	height: 30px;
 	z-index: 100;
@@ -44,7 +44,7 @@ body {
 
 .navbar-show {
 	opacity: 1;
-	height: 80px;
+	height: 8.5vh;
 	visibility: visible;
 }
 
@@ -69,7 +69,7 @@ body {
   	padding-top: 55px;
   	padding-right: 20px;
   	padding-left: 15px;
-  	font-size: 23px;
+  	font-size: 1.3vw;
     font-weight: bold;
     color: black;
 }
@@ -91,11 +91,6 @@ body {
 
 .line-down {
   	top: 20px;
-}
-
-.hide-button  {
-  	position: fixed;
-  	
 }
 
 .line-up, .line-down {
@@ -137,16 +132,14 @@ body {
 	background: none;
 	border: none;
 	outline: none;
-	top: 5px;
-  	left: 150px;
-  	width: 50px;
-  	height: 50px;
+	top: 0%;
+  	left: 9%;
 	z-index: 100;
 }
 
 .header-logo-link {
 	font-family: 'Monoton', cursive;
-	font-size: 45px;
+	font-size: 2.5vw;
 	text-decoration: none;
 	color: #ad3a4b;
 }
@@ -166,10 +159,10 @@ body {
 */
 main {
     color: white;
-    position: relative;
+    position: absolute;
     height: 81vh;
     width: 100vw;
-    top: 78px;
+    top: 8%;
 }
 
 .main-background {
@@ -200,6 +193,7 @@ footer {
 
 .footer-links-grid {
     display: grid;
+    height: 100%;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 80px);
     align-items: center;
@@ -207,7 +201,7 @@ footer {
 }
 
 .footer-links-grid > a {
-	font-size: 50px;
+	font-size: 2.8vw;
   	color: #ad3a4b;
 }
 
@@ -236,7 +230,7 @@ footer {
 }
 
 .home h1 {
-    padding-top: 150px;
+    padding-top: 10%;
     padding-bottom: 110px;
     font-size: 7vw;
     font-weight: normal;
@@ -270,11 +264,12 @@ footer {
 ***********************************
 */
 .skills-grid {
-    position: absolute;
+    position: relative;
     left: 10%;
     top: 8%;
     display: grid;
     width: 35%;
+    height: 80%;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
@@ -284,7 +279,7 @@ footer {
 
 .skills-grid-block {
     background: white;
-    height: 190px;
+    height: 100%;
     border-radius: 5px;
     box-shadow: 0 5px 15px 0px rgba(0,0,0,0.1);
     -o-transition: all 0.2s ease-in-out;
@@ -299,7 +294,7 @@ footer {
 }
 
 .skills-grid-block i {
-    font-size: 65px;
+    font-size: 3.5vw;
     align-self: flex-end;
     color: rgb(23, 30, 39);
 }
@@ -310,12 +305,6 @@ footer {
 
 .icon-html5-alt:hover {
     color: #f14a29;
-}
-
-.skills-grid-block i {
-    font-size: 65px;
-    align-self: flex-end;
-    color: rgb(23, 30, 39);
 }
 
 .icon-reactjs:hover {
@@ -370,14 +359,14 @@ i.icon-javascript-alt, i.icon-nodejs {
     width: 45vw;
     left: 49%;
     top: 0;
-    line-height: 55px;
+    line-height: 3vw;
     display: grid;
     word-break: break-all;
     grid-template-rows: 0.96fr;
     grid-template-columns: 0.7fr;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: 2vw;
     z-index: 10;
 }
 /*
@@ -394,12 +383,12 @@ i.icon-javascript-alt, i.icon-nodejs {
     width: 50vw;
     height: 100%;
     margin: 0 auto;
-    padding-top: 60px;
+    padding-top: 3%;
 }
 
 .contacts-form-control {
     font-family: inherit;
-    height: 55px;
+    height: 100%;
     padding-left: 30px;
     outline: none;
     font-size: 16px;
@@ -422,16 +411,17 @@ i.icon-javascript-alt, i.icon-nodejs {
     color: #ad3a4b;
     text-align: center;
     margin-bottom: 50px;
-    font-size: 40px;
+    font-size: 2.2vw;
 }
 
 .contacts-form {
     display: grid;
     width: 80%;
+    height: 100%;
     margin: 0 auto;
-    grid-template-rows: 60px 60px 60px 200px;
+    grid-template-rows: repeat(3, 0.1fr) 0.4fr 0.1fr;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 40px;
+    grid-gap: 4%;
     align-items: center;
 }
 
@@ -441,7 +431,7 @@ i.icon-javascript-alt, i.icon-nodejs {
 }
 
 #comment {
-    height: 200px;
+    height: 100%;
     padding-top: 20px;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -457,7 +447,7 @@ i.icon-javascript-alt, i.icon-nodejs {
     color: white;
     margin: auto;
     width: 200px;
-    height: 60px;
+    height: 100%;
     font-size: 20px;
     cursor: pointer;
     background: #dc3545;
@@ -490,13 +480,13 @@ i.icon-javascript-alt, i.icon-nodejs {
 }
 
 .carousel-elements-container {
-    width: 99999px;
+    width: 20000px;
     height: 100%;
     margin: 0;
     padding: 0;
     display: block;
     list-style: none;
-    transition: all 0.5s;
+    transition: all 0.7s;
 }
 
 .carousel-elements-container li {
@@ -520,24 +510,24 @@ i.icon-javascript-alt, i.icon-nodejs {
 
 .project-definition {
     width: 70%;
+    height: 100%;
     margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
 }
 
 .project-external-links {
+    align-self: flex-start;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
 }
 
-.project-external-links div {
-    width: 70%;
-}
-
 .project-external-links a {
     position: relative;
-    margin-top: 80px;
-    margin-right: 15px;
-    margin-bottom: 5px;
+    margin-top: 30px;
     display: inline-block;
     font-size: 1.3vw;
     text-decoration: none;
@@ -582,14 +572,11 @@ i.icon-javascript-alt, i.icon-nodejs {
 }
 
 .project-name {
-    margin-top: 120px;
-    margin-bottom: 80px;
     font-size: 3vw;
 }
 
 .project-description {
     font-size: 1.5vw;
-    margin-bottom: 80px;
 }
 
 .project-imgs img {
