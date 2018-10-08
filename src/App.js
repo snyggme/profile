@@ -30,7 +30,7 @@ class App extends Component {
                 <Header disableLinks={disableLinks} 
                         handleClick={(e) => {
                             const nextPath = getPathname(e.target.href)
-                            const currentPath = window.location.pathname
+                            const currentPath = getPathname(window.location.pathname)
 
                             if (nextPath !== currentPath) {
                                 this.setState({

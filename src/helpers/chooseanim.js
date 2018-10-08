@@ -3,7 +3,7 @@ export const getAnimationName = (currPath, nextPath) => {
 	const newNextPath = nextPath === '/' ? 'home' : nextPath.substring(1)
 
 	return obj[`${newCurrPath}_${newNextPath}`]
-}
+} 
 
 export const getPathname = (str) => str.substring(str.lastIndexOf('/'))
 
