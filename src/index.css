@@ -569,6 +569,13 @@ i.icon-javascript-alt, i.icon-nodejs {
     font-size: 1.3vw;
     color: white;
     background-color: rgba(23, 30, 39, 1);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-technologies span:hover {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
 }
 
 .project-name {

@@ -6,9 +6,7 @@ import { HeaderItem } from './HeaderItem'
 class Header extends Component {
 	constructor(props) {
         super(props)
-        this.state = {
-        	menuList: ['Home', 'Skills', 'Projects', 'Contacts']
-        }
+        this.menuList = ['Home', 'Skills', 'Projects', 'Contacts']
         this.processing = false
         this.menuMouseEnter = this.menuMouseEnter.bind(this)
         this.menuClick = this.menuClick.bind(this)
@@ -32,7 +30,6 @@ class Header extends Component {
 		document.querySelector('.navbar').classList.toggle('navbar-show')
 	}
     render() {
-    	const { menuList } = this.state
     	const { disableLinks } = this.props
     	const disabled = disableLinks ? 'disabled-link' :''
 
@@ -51,7 +48,7 @@ class Header extends Component {
 					this.processing = false
 				}}>
 					<ul className="navbar-list">
-					    {menuList.map(item => 
+					    {this.menuList.map(item => 
 					    	<HeaderItem item={item} 
 					    				active={active} 
 					    				onClick={this.props.handleClick} 
