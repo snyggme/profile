@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { HeaderItem } from './HeaderItem' 
-
+import { getPathname } from '../helpers/chooseanim'
 
 class Header extends Component {
 	constructor(props) {
@@ -34,7 +34,7 @@ class Header extends Component {
     	const disabled = disableLinks ? 'disabled-link' :''
 
     	let active = 'home'
-    	const path = window.location.pathname
+    	const path = getPathname(window.location.pathname)
 
     	if (path !== '/') {
     		let arr = [...path]

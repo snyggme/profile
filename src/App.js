@@ -20,9 +20,9 @@ class App extends Component {
     render() {
         let { newStyle, nextPath, disableLinks, showContent } = this.state
 
-        if (nextPath === '' && window.location.pathname !== '/') {
+        if (nextPath === '' && getPathname(window.location.pathname) !== '/') {
             newStyle = {
-                animation: getAnimationName('/home', window.location.pathname)
+                animation: getAnimationName('/home', getPathname(window.location.pathname))
             }
         }
         return (
