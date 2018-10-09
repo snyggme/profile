@@ -355,7 +355,7 @@ i.icon-javascript-alt, i.icon-nodejs {
 .skills-story {
     color: white;
     position: absolute;
-    height: 81vh;
+    height: 100%;
     width: 45vw;
     left: 49%;
     top: 0;
@@ -474,7 +474,7 @@ i.icon-javascript-alt, i.icon-nodejs {
 #carousel {
     position: relative;
     width: 87vw;
-    height: 81vh;
+    height: 100%;
     margin: auto;
     overflow: hidden;
 }
@@ -812,3 +812,114 @@ i.icon-javascript-alt, i.icon-nodejs {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+/*
+***********************************
+    media query start
+***********************************
+*/
+@media screen and (max-width: 1299px) {
+    .line{
+        width: 30px;
+        height: 3px; 
+    }
+    .line-up {
+        top: 10px;
+    }
+
+    .line-down {
+        top: 20px;
+    }
+    .up {
+        top: 10px;
+    }
+
+    .down {
+        top: 20px;
+    }
+    .flip-up{
+        top: 15px;
+        transform: rotate(135deg);
+    }
+
+    .flip-down {
+        top: 15px;
+        transform: rotate(-135deg);
+    }
+    #header-logo {
+        top: 1%;
+    }
+    #reverse-lines {
+        top: 2%;
+    }
+    .nav-link {
+        font-size: 1.5vw;
+    }
+    main {
+        height: 70vh;
+        top: 14%;
+    }
+    .main-background {
+        height: 70vh;
+        top: 14%;
+    }
+    i.icon-javascript-alt, i.icon-nodejs {
+        width: 20px;
+    }
+    .skills-grid {
+        top: 14%;
+        height: 70%;
+    }
+    .skills-grid-block i {
+        font-size: 3vw;
+        align-self: flex-end;
+        color: rgb(23, 30, 39);
+    }
+    .contacts-container {
+        width: 60vw;
+        padding-top: 0%;
+    }
+    .contacts-form-control {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header-logo-link {
+        font-size: 35px;
+    }
+    #reverse-lines {
+        top: 3%;
+    }
+    .footer-links-grid > a {
+        font-size: 5vw;
+        text-align: center;
+    }
+    .navbar-list {
+        padding-top: 10px;
+        grid-template-columns: repeat(4, 130px);
+    }
+    .nav-link {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 662px) {
+    .footer-links-grid > a {
+        font-size: 8vw;
+        text-align: center;
+    }
+    .home h1 {
+        padding-top: 30%;
+        font-size: 8vw;
+    }
+
+    .home h2, .home h3 {
+        font-size: 5vw;
+    }
+}
+
+/*
+***********************************
+    media query end
+***********************************
+*/
