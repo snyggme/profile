@@ -195,7 +195,7 @@ footer {
     display: grid;
     height: 100%;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 80px);
+    grid-template-columns: repeat(3, 110px);
     align-items: center;
     justify-content: center;
 }
@@ -203,14 +203,21 @@ footer {
 .footer-links-grid > a {
 	font-size: 2.8vw;
   	color: #ad3a4b;
+    text-align: center;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .link-gth:hover, .link-cdp:hover {
     color: black;
+    transform: scale(1.2);
 }
 
 .link-fcc:hover {
     color: #006400;
+    transform: scale(1.2);
 }
 /*
 ***********************************
@@ -904,6 +911,9 @@ i.icon-javascript-alt, i.icon-nodejs {
 }
 
 @media screen and (max-width: 662px) {
+    .main-background {
+        width: 86.5vw;
+    }
     .footer-links-grid > a {
         font-size: 8vw;
         text-align: center;
@@ -912,12 +922,107 @@ i.icon-javascript-alt, i.icon-nodejs {
         padding-top: 30%;
         font-size: 8vw;
     }
-
     .home h2, .home h3 {
         font-size: 5vw;
     }
-}
+    .navbar {
+        background-color: #f2f2f2;
+        z-index: 100;
+    }
+    .navbar-show {
+        height: 50vh;
+    }
+    .navbar-list {
+        padding: 0;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+    }
+    .nav-link {
+        padding: 0;
+        font-size: 25px;
+    }
+    .arrow {
+        display: none;
+    }
+    #carousel {
+        overflow: inherit;
+    }
+    .carousel-elements-container {
+        width: 87vw;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
 
+    .carousel-elements-container li {
+        display: block;
+        float: none;
+        height: auto;
+        margin-bottom: 40px;
+    }
+    .project-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 220px;
+        justify-items: stretch;
+    }
+    .project-definition {
+        padding-top: 20px;
+        grid-template-rows: 20px 110px 30px 30px;
+        grid-template-columns: 1fr;
+    }
+    .project-name {
+        font-size: 5vw;
+        color: white;
+    }
+    .project-description {
+        font-size: 2.8vw;
+        color: white;
+    }
+    .project-technologies span {
+        font-size: 2.8vw;
+        padding: 5px 5px;
+        color: rgba(23, 30, 39, 1);
+        background-color: white;
+    }
+    .project-external-links {
+        align-self: center;
+    }
+    .project-external-links a {
+        color: white;   
+        font-size: 2.8vw;  
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+    .contacts-container {
+        width: 100%;
+    }
+    .contacts-header {
+        color: white;
+        font-size: 25px;
+        padding-top: 5px;
+        margin-bottom: 30px;
+    }
+    .contacts-form {
+        width: 100%;
+        margin: 0 auto;
+        grid-template-rows: repeat(3, 0.1fr) 0.4fr 0.1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 /*
 ***********************************
     media query end
