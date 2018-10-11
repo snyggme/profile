@@ -1,10 +1,12 @@
 import React from 'react'
 
-export const SkillsItem = ({ logo }) => {
+export const SkillsItem = ({ logo, screenWidth }) => {
 	return (
 		<div className='skills-grid-block'>
 			<i className={logo.class}></i>
-			<div style={{textAlign: 'center', marginTop: '5px', fontSize: '1.2vw'}}>{logo.name}</div>
+			{ screenWidth > 663 &&
+				<div className='skills-grid-block-lang'>{logo.name}</div>
+			}
 		</div>
 	)
 }

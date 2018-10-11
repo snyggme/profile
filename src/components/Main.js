@@ -6,14 +6,14 @@ import Projects from './Projects'
 import Contacts from './Contacts'
 
 const Main = (props) => {
-    const { showContent } = props
+    const { showContent, screenWidth } = props
     
     return (
         <main>
 	      	<Switch>
 	           	<Route exact path='/' component={Home}/>                   
 	           	<Route path='/skills' render={(routeProps) => (
-                    <Skills {...routeProps} show={showContent}/>
+                    <Skills {...routeProps} show={showContent} screenWidth={screenWidth}/>
                 )}/>
 	           	<Route path='/projects' render={(routeProps) => (
                     <Projects {...routeProps} show={showContent}/>

@@ -3,27 +3,10 @@ import { CSSTransitionGroup } from 'react-transition-group'
 import { SkillsItem } from './SkillsItem'
 
 const Skills = (props) => {
-	const show = props.show
+	const { show, screenWidth } = props
 
 	return (
 		<div style={{height: '100%'}}>
-			{ show &&
-				<CSSTransitionGroup
-	                transitionName="example"
-	                transitionAppear={true}
-	                transitionEnter={false}
-			        transitionLeave={false}
-			        transitionAppearTimeout={1000}
-			        transitionEnterTimeout={0}
-			        transitionLeaveTimeout={0}
-			        style={{display: 'block', position: 'relative', height: '100%'}}>
-					<div className='skills-grid'>
-						{skillsLogos.map((item, index) => 
-							<SkillsItem logo={item} key={index}/>
-						)}
-					</div>
-				</CSSTransitionGroup>
-			}
 			<CSSTransitionGroup
 	            transitionName="example"
 	            transitionAppear={true}
@@ -38,6 +21,23 @@ const Skills = (props) => {
 					</div>
 				</div>
 			</CSSTransitionGroup>		
+			{ show &&
+				<CSSTransitionGroup
+	                transitionName="example"
+	                transitionAppear={true}
+	                transitionEnter={false}
+			        transitionLeave={false}
+			        transitionAppearTimeout={1000}
+			        transitionEnterTimeout={0}
+			        transitionLeaveTimeout={0}
+			        style={{display: 'block', position: 'relative', height: '100%'}}>
+					<div className='skills-grid'>
+						{skillsLogos.map((item, index) => 
+							<SkillsItem screenWidth={screenWidth} logo={item} key={index}/>
+						)}
+					</div>
+				</CSSTransitionGroup>
+			}
 		</div>
 	)	
 }

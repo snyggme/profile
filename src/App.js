@@ -68,7 +68,7 @@ class App extends Component {
                             }) 
                         }}
                 ></div>
-                <Main showContent={showContent}/>
+                <Main showContent={showContent} screenWidth={screenWidth}/>
                 <Footer />
             </div>
         )
