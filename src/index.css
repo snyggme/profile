@@ -28,7 +28,7 @@ body {
 }
 
 .navbar {
-	height: 30px;
+	height: 0px;
 	width: 100%;
 	position: fixed;
 	/*background-color: rgba(23, 30, 39, 0.9);*/
