@@ -559,23 +559,12 @@ i.icon-javascript-alt, i.icon-nodejs {
     width: 100%;
     height: 3px;
     bottom: -7px;
-    background-color: white;
+    background-color: #ad3a4b;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-}
-
-.project-external-links a:after {
-    content: "";
-    position: absolute;
-    z-index: 500;
-    width: 100%;
-    height: 3px;
-    left: 0px;
-    bottom: -7px;
-    background-color: #ad3a4b;
 }
 
 .project-external-links a:hover:before {
@@ -955,7 +944,7 @@ i.icon-javascript-alt, i.icon-nodejs {
     }
     .navbar {
         background-color: #f2f2f2;
-        z-index: 100;
+        z-index: 2000;
     }
     .navbar-show {
         height: 50vh;
