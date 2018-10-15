@@ -557,14 +557,25 @@ i.icon-javascript-alt, i.icon-nodejs {
     position: absolute;
     z-index: 1000;
     width: 100%;
-    height: 2px;
-    bottom: -4px;
-    background-color: #ad3a4b;
+    height: 3px;
+    bottom: -7px;
+    background-color: white;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+}
+
+.project-external-links a:after {
+    content: "";
+    position: absolute;
+    z-index: 500;
+    width: 100%;
+    height: 3px;
+    left: 0px;
+    bottom: -7px;
+    background-color: #ad3a4b;
 }
 
 .project-external-links a:hover:before {
