@@ -2,7 +2,15 @@ import React from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
 
 export const ProjectsItem = (props) => {
-	const { show, src, name, description, technologies, project, github, className } = props
+	const { 
+		show, 
+		src, 
+		name, 
+		description, 
+		technologies, 
+		project, 
+		github, 
+		className } = props
 
 	return(
 		<li>
