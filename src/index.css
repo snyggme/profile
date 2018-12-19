@@ -373,6 +373,7 @@ i.icon-javascript-alt, i.icon-nodejs {
     left: 49%;
     top: 0;
     line-height: 3vw;
+    text-align: justify;
     display: grid;
     word-break: break-all;
     grid-template-rows: 0.96fr;

@@ -17,7 +17,7 @@ const Skills = (props) => {
 			    transitionLeaveTimeout={0}>
 				<div className='skills-story'>
 					<div>
-						My name is Roman or just snygg. I am fan of programming and especially of frontend development. Currently trying to fill this site with projects. Also i like computer's hardware and to build some stuff with microcontrollers.
+						My name is Roman or just snygg. I am fan of programming and especially of frontend development. Strive to learn new technologies and competitive skills. Interested in backend development. Also i like computer hardware and to build impressive stuff with microcontrollers.
 					</div>
 				</div>
 			</CSSTransitionGroup>		
