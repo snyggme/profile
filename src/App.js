@@ -18,6 +18,36 @@ class App extends Component {
             screenWidth: window.innerWidth
         }
     }
+
+    handleClick = (e) => {
+        const screenWidth = window.innerWidth
+        const nextPath = getPathname(e.target.href)
+        const currentPath = getPathname(window.location.pathname)
+
+        if (nextPath !== currentPath) {
+            if(screenWidth < 663) {
+                document.getElementById('reverse-lines').click()
+
+                this.setState({
+                    nextPath: nextPath,
+                    disableLinks: false,
+                    showContent: true,
+                    screenWidth: screenWidth
+                })  
+            } else {
+               this.setState({
+                    newStyle: {
+                        animation: getAnimationName(currentPath, nextPath)
+                    },
+                    nextPath: nextPath,
+                    disableLinks: true,
+                    showContent: false,
+                    screenWidth: screenWidth
+                })   
+            }
+        }
+    }
+
     render() {
         let { newStyle, nextPath, disableLinks, showContent, screenWidth } = this.state
 
@@ -32,35 +62,8 @@ class App extends Component {
         return (
             <div>
                 <Header disableLinks={disableLinks} 
-                        handleClick={(e) => {
-                            const screenWidth = window.innerWidth
-                            const nextPath = getPathname(e.target.href)
-                            const currentPath = getPathname(window.location.pathname)
-
-                            if (nextPath !== currentPath) {
-                                if(screenWidth < 663) {
-                                    document.getElementById('reverse-lines').click()
-
-                                    this.setState({
-                                        nextPath: nextPath,
-                                        disableLinks: false,
-                                        showContent: true,
-                                        screenWidth: screenWidth
-                                    })  
-                                } else {
-                                   this.setState({
-                                        newStyle: {
-                                            animation: getAnimationName(currentPath, nextPath)
-                                        },
-                                        nextPath: nextPath,
-                                        disableLinks: true,
-                                        showContent: false,
-                                        screenWidth: screenWidth
-                                    })   
-                                }
-                            }        
-                }}/>
-                <div    className='main-background' style={newStyle}
+                        handleClick={this.handleClick} />
+                <div className='main-background' style={newStyle}
                         onAnimationEnd={() => { 
                             this.setState({ 
                                 disableLinks: false,

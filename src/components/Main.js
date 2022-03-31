@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from './Home'
 import Skills from './Skills'
 import Projects from './Projects'
@@ -10,18 +10,12 @@ const Main = (props) => {
     
     return (
         <main>
-	      	<Switch>
-	           	<Route exact path='/' component={Home}/>                   
-	           	<Route path='/skills' render={(routeProps) => (
-                    <Skills {...routeProps} show={showContent} screenWidth={screenWidth}/>
-                )}/>
-	           	<Route path='/projects' render={(routeProps) => (
-                    <Projects {...routeProps} show={showContent}/>
-                )}/>
-	           	<Route path='/contacts' render={(routeProps) => (
-                    <Contacts {...routeProps} show={showContent}/>
-                )}/>
-	        </Switch>
+	      	<Routes>
+	           	<Route exact path='/' element={<Home/>}/>                   
+	           	<Route path='/skills' element={<Skills show={showContent} screenWidth={screenWidth} />} />
+	           	<Route path='/projects' element={<Projects show={showContent} />} />
+	           	<Route path='/contacts' element={<Contacts show={showContent} />} />
+	        </Routes>
 	    </main>
     )
 }

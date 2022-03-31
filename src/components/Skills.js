@@ -1,5 +1,5 @@
 import React from 'react'
-import { CSSTransitionGroup } from 'react-transition-group'
+import { Transition, TransitionGroup } from 'react-transition-group'
 import { SkillsItem } from './SkillsItem'
 
 const Skills = (props) => {
@@ -7,7 +7,7 @@ const Skills = (props) => {
 
 	return (
 		<div style={{height: '100%'}}>
-			<CSSTransitionGroup
+			<Transition
 	            transitionName="example"
 	            transitionAppear={true}
 	            transitionEnter={false}
@@ -20,9 +20,9 @@ const Skills = (props) => {
 						My name is Roman or just snygg. I am fan of programming and especially of frontend development. Strive to learn new technologies and competitive skills. Interested in backend development. Also i like computer hardware and to build impressive stuff with microcontrollers.
 					</div>
 				</div>
-			</CSSTransitionGroup>		
+			</Transition>		
 			{ show &&
-				<CSSTransitionGroup
+				<TransitionGroup
 	                transitionName="example"
 	                transitionAppear={true}
 	                transitionEnter={false}
@@ -36,7 +36,7 @@ const Skills = (props) => {
 							<SkillsItem screenWidth={screenWidth} logo={item} key={index}/>
 						)}
 					</div>
-				</CSSTransitionGroup>
+				</TransitionGroup>
 			}
 		</div>
 	)	

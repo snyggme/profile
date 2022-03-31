@@ -8,16 +8,16 @@ class Header extends Component {
         super(props)
         this.menuList = ['Home', 'Skills', 'Projects', 'Contacts']
         this.processing = false
-        this.menuMouseEnter = this.menuMouseEnter.bind(this)
-        this.menuClick = this.menuClick.bind(this)
     }
-	menuMouseEnter(e) {
+
+	menuMouseEnter = (e) => {
 		if (e.target.className !== 'selected') {
 			document.querySelector('.line-up').classList.toggle('down')
 			document.querySelector('.line-down').classList.toggle('up')	
 		}
 	}
-	menuClick(e) {
+
+	menuClick = (e) => {
 		if (this.processing)
 			return
 
@@ -29,8 +29,9 @@ class Header extends Component {
 		document.querySelector('.line-down').classList.toggle('flip-down')	
 		document.querySelector('.navbar').classList.toggle('navbar-show')
 	}
+
     render() {
-    	const { disableLinks } = this.props
+    	const { disableLinks, handleClick } = this.props
     	const disabled = disableLinks ? 'disabled-link' :''
 
     	let active = 'home'
@@ -51,7 +52,7 @@ class Header extends Component {
 					    {this.menuList.map(item => 
 					    	<HeaderItem item={item} 
 					    				active={active} 
-					    				onClick={this.props.handleClick} 
+					    				onClick={handleClick} 
 					    				disabled={disabled}
 					    				key={item.toString()}/>
 					    )}
@@ -64,7 +65,7 @@ class Header extends Component {
 					<div className="line line-down"></div>
 				</button>
 				<button id='header-logo'>
-					<Link className={`header-logo-link ${disabled}`} to='' onClick={this.props.handleClick}>s</Link>
+					<Link className={`header-logo-link ${disabled}`} to='' onClick={handleClick}>s</Link>
 				</button>
 			</header>
 		)

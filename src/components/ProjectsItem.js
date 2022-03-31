@@ -1,5 +1,5 @@
 import React from 'react'
-import { CSSTransitionGroup } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'
 
 export const ProjectsItem = (props) => {
 	const { 
@@ -17,7 +17,7 @@ export const ProjectsItem = (props) => {
 			<div className={`project-container ${className}`}>
 				<div className='project-imgs'><img src={src} alt=''/></div>
 				{ show && 
-					<CSSTransitionGroup
+					<CSSTransition
 						transitionName="example"
 						transitionAppear={true}
 						transitionEnter={false}
@@ -46,7 +46,7 @@ export const ProjectsItem = (props) => {
 								</div>
 							</div>
 						</div>
-					</CSSTransitionGroup>
+					</CSSTransition>
 				}
 			</div>
 		</li>

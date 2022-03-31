@@ -1,11 +1,11 @@
 import React from 'react'
-import { CSSTransitionGroup } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'
 
 const Contacts = ({ show }) => {
 	return (
 		<div style={{height: '100%'}}>
 			{ show &&
-				<CSSTransitionGroup
+				<CSSTransition
 			        transitionName="example"
 			        transitionAppear={true}
 			        transitionEnter={false}
@@ -25,7 +25,7 @@ const Contacts = ({ show }) => {
 			        	</form>
 			        </div>
 
-				</CSSTransitionGroup>
+				</CSSTransition>
 			}
 		</div>
 	)

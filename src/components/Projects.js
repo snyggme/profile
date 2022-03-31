@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CSSTransitionGroup } from 'react-transition-group'
+import { Transition } from 'react-transition-group'
 import { ProjectsItem } from './ProjectsItem'
 import { httpGet } from '../helpers/network'
 
@@ -52,54 +52,14 @@ class Projects extends Component {
     				: prevState.carouselMargin - prevState.carouselWidth
     	}))
     }
-	
-	handleButton = (dir) => (e) => {
-		if (dir === 'left') {
-			this.setState(prevState =>  {
-				let i = prevState.projectIndex;
 
-				if (prevState.data[i - 2] === undefined)
-					i = prevState.data.length + 1
-
-				return {
-					projects: {
-						current: prevState.projects.prev,
-						next: prevState.projects.current,
-						prev: prevState.data[i - 2]
-					},
-					projectIndex: --i
-				}
-			})
-		} else {
-			this.setState(prevState => {
-				let i = prevState.projectIndex;
-
-				if (prevState.data[i + 2] === undefined)
-					i = -2
-					
-				return {
-					projects: {
-						current: prevState.projects.next,
-						next: prevState.data[i + 2],
-						prev: prevState.projects.current
-					},
-					projectIndex: ++i
-				}
-			})
-		}
-	}
-
-	handleTransitionEnd = () => {
-		console.log('transition ended')
-	}
-	
     render() {
 		const { show } = this.props
 		const { projects, isLoading } = this.state
 		
 
 		return (
-			<CSSTransitionGroup
+			<Transition
 		        transitionName="example"
 		        transitionAppear={true}
 		        transitionEnter={false}
@@ -126,7 +86,7 @@ class Projects extends Component {
 						}
 					</ul>
 				</div>
-			</CSSTransitionGroup>
+			</Transition>
 		)
 	}
 }
