@@ -312,52 +312,44 @@ footer {
     font-size: 1.2vw;
 }
 
-.icon-reactjs:hover {
-    color: #52d3fa;
-}
-
-.icon-html5-alt:hover {
+.skills-grid-block-HTML5:hover i {
     color: #f14a29;
 }
 
-.icon-reactjs:hover {
-    color: #52d3fa;
-}
-
-.icon-html5-alt:hover {
-    color: #f14a29;
-}
-
-.icon-css3-alt:hover {
+.skills-grid-block-CSS3:hover i {
     color: #3B5998;
+}
+
+.skills-grid-block-JavaScript:hover i {
+    color:  #f0db4f;
+}
+
+.skills-grid-block-React:hover i {
+    color: #52d3fa;
+}
+
+.skills-grid-block-jQuery:hover i {
+    color: #0769AD;
+}
+
+.skills-grid-block-NodeJS:hover i {
+    color: #66cc33;
+}
+
+.skills-grid-block-Bootstrap:hover i {
+    color: #080135;
+}
+
+.skills-grid-block-SCSS:hover i {
+    color: #c69;
+}
+
+.skills-grid-block-Git:hover i {
+    color: #F1502F;
 }
 
 i.icon-javascript-alt, i.icon-nodejs {
     width: 50px;
-}
-
-.icon-javascript-alt:hover {
-    color:  #f0db4f;
-}
-
-.icon-jquery:hover {
-    color: #0769AD;
-}
-
-.icon-nodejs:hover {
-    color: #66cc33;
-}
-
-.icon-bootstrap:hover {
-    color: #080135;
-}
-
-.icon-sass:hover {
-    color: #c69;
-}
-
-.icon-git:hover {
-    color: #F1502F;
 }
 
 .skills-grid-block:hover {
@@ -614,6 +606,7 @@ i.icon-javascript-alt, i.icon-nodejs {
 
 .project-name {
     font-size: 3vw;
+    /* color: #271726; */
 }
 
 .project-description {
@@ -638,11 +631,14 @@ i.icon-javascript-alt, i.icon-nodejs {
     color: black;
     cursor: pointer;
     font-size: 50px;
-    z-index: 100;
+    z-index: 1000;
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .arrow:hover {
     background-color: #e0e0e0;
+    transform: scale(1.2);
 }
 
 .arrow-left i {
@@ -658,17 +654,39 @@ i.icon-javascript-alt, i.icon-nodejs {
 }
 
 .arrow-left {
-    left: 0%;
+    left: 0.5%;
 }
 
 .arrow-right {
-    right: 0%;
+    right: 0.5%;
 }
 /*
 ***********************************
     projects end
 ***********************************
 */
+
+.loading {
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 @keyframes background-50-to-50-right {
     0% {
         width: 42vw;

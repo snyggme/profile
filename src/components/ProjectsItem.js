@@ -11,7 +11,7 @@ export const ProjectsItem = (props) => {
 		project, 
 		github, 
 		className } = props
-
+		
 	return(
 		<li>
 			<div className={`project-container ${className}`}>

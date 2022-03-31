@@ -7,17 +7,17 @@ class Projects extends Component {
 	constructor(props) {
         super(props)
         this.state = {
-        	projects: [],
+			projects: [],
         	carouselMargin: 0,
         	carouselWidth: 87,
         	isLoading: false
         }
-        this.handleLeftButton = this.handleLeftButton.bind(this)
-        this.handleRightButton = this.handleRightButton.bind(this)
     }
+	
     componentDidMount() {
     	this.loadData()
-    }
+    }	      			
+
     loadData() {
     	this.setState({ isLoading: true })
 
@@ -34,7 +34,8 @@ class Projects extends Component {
 	      		})
 	      	)
     }
-    handleLeftButton(e) {
+
+    handleLeftButton = (e) => {
     	this.setState(prevState => ({
     		carouselMargin: 
     			prevState.carouselMargin === 0 
@@ -42,7 +43,8 @@ class Projects extends Component {
     				: prevState.carouselMargin + prevState.carouselWidth
     	}))
     }
-    handleRightButton(e) {
+
+    handleRightButton = (e) => {
 		this.setState(prevState => ({
     		carouselMargin: 
     			prevState.carouselMargin === -prevState.carouselWidth * (prevState.projects.length - 1)
@@ -50,9 +52,51 @@ class Projects extends Component {
     				: prevState.carouselMargin - prevState.carouselWidth
     	}))
     }
+	
+	handleButton = (dir) => (e) => {
+		if (dir === 'left') {
+			this.setState(prevState =>  {
+				let i = prevState.projectIndex;
+
+				if (prevState.data[i - 2] === undefined)
+					i = prevState.data.length + 1
+
+				return {
+					projects: {
+						current: prevState.projects.prev,
+						next: prevState.projects.current,
+						prev: prevState.data[i - 2]
+					},
+					projectIndex: --i
+				}
+			})
+		} else {
+			this.setState(prevState => {
+				let i = prevState.projectIndex;
+
+				if (prevState.data[i + 2] === undefined)
+					i = -2
+					
+				return {
+					projects: {
+						current: prevState.projects.next,
+						next: prevState.data[i + 2],
+						prev: prevState.projects.current
+					},
+					projectIndex: ++i
+				}
+			})
+		}
+	}
+
+	handleTransitionEnd = () => {
+		console.log('transition ended')
+	}
+	
     render() {
 		const { show } = this.props
 		const { projects, isLoading } = this.state
+		
 
 		return (
 			<CSSTransitionGroup
@@ -74,10 +118,12 @@ class Projects extends Component {
 		        	</div>
 			        <ul className='carousel-elements-container' 
 			        	style={{marginLeft: `${this.state.carouselMargin}vw`}}>
-					{ !isLoading &&
-							projects.map(item => 
-								<ProjectsItem {...item} show={show} key={item.name.toString()}/>)
-					}
+						{ isLoading 
+								? <div className='loading'></div>
+								: projects.map(item => 
+									<ProjectsItem {...item} show={show} key={item.name.toString()}/>)
+								
+						}
 					</ul>
 				</div>
 			</CSSTransitionGroup>

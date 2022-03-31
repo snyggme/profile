@@ -12,11 +12,11 @@ export const animStr = (e) => {
 
 			i++
 
-			if (i === nums.length) {
+			if (i === pair.length) {
 				setTimeout(() => {
 					elem.textContent = str
 					elem.dataset.processing = false
-				}, 80)
+				}, 200)
 			} else {
 				setChange(pair, i)
 			}
