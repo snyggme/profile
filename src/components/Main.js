@@ -12,9 +12,9 @@ const Main = (props) => {
         <main>
 	      	<Routes>
 	           	<Route exact path='/' element={<Home/>}/>                   
-	           	<Route path='/skills' element={<Skills show={showContent} screenWidth={screenWidth} />} />
-	           	<Route path='/projects' element={<Projects show={showContent} />} />
-	           	<Route path='/contacts' element={<Contacts show={showContent} />} />
+	           	<Route path='/skills' element={<Skills screenWidth={screenWidth} />} />
+	           	<Route path='/projects' element={<Projects />} />
+	           	<Route path='/contacts' element={<Contacts />} />
 	        </Routes>
 	    </main>
     )

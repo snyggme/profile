@@ -2,28 +2,23 @@ import React from 'react'
 import { animStr } from '../helpers/stringanim.js'
 import { Transition } from 'react-transition-group'
    
-
+const duration = 500;
 const defaultStyle = {
-	transition: `opacity ${300}ms ease-in-out`,
-	opacity: 0,
+	transition: `opacity ${duration}ms ease-in-out`
   }
   
-  const transitionStyles = {
-	entering: { opacity: 1 },
-	entered:  { opacity: 1 },
-	exiting:  { opacity: 1 },
-	exited:  { opacity: 1 },
-  };
+const transitionStyles = {
+	entering: { opacity: 0 },
+	entered:  { opacity: 1 }
+};
 
 const Home = () => {
 	return (
-		<Transition timeout={{
-			appear: 500
-		   }}>
+		<Transition in={true} timeout={duration} appear>
 			{ state => (
 				<div className='home'
 					style={{
-						...defaultStyle,
+						... defaultStyle,
 						...transitionStyles[state]
 					}}
 				>
@@ -40,8 +35,7 @@ const Home = () => {
 					</h2>
 					<h2>aspiring frontend developer</h2>
 				</div>
-			)
-			}
+			)}
 		</Transition>
 	)
 }

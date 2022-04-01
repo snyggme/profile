@@ -14,7 +14,6 @@ class App extends Component {
             },
             nextPath: '',
             disableLinks: false,
-            showContent: false,
             screenWidth: window.innerWidth
         }
     }
@@ -29,20 +28,18 @@ class App extends Component {
                 document.getElementById('reverse-lines').click()
 
                 this.setState({
-                    nextPath: nextPath,
+                    nextPath,
                     disableLinks: false,
-                    showContent: true,
-                    screenWidth: screenWidth
+                    screenWidth
                 })  
             } else {
                this.setState({
                     newStyle: {
                         animation: getAnimationName(currentPath, nextPath)
                     },
-                    nextPath: nextPath,
+                    nextPath,
                     disableLinks: true,
-                    showContent: false,
-                    screenWidth: screenWidth
+                    screenWidth
                 })   
             }
         }
@@ -55,8 +52,6 @@ class App extends Component {
             newStyle = {
                 animation: getAnimationName('/home', getPathname(window.location.pathname))
             }
-        } else if (screenWidth < 663) {
-            showContent = true
         }
         
         return (
@@ -66,15 +61,15 @@ class App extends Component {
                 <div className='main-background' style={newStyle}
                         onAnimationEnd={() => { 
                             this.setState({ 
-                                disableLinks: false,
-                                showContent: true 
+                                disableLinks: false
                             }) 
                         }}
                 ></div>
-                <Main showContent={showContent} screenWidth={screenWidth}/>
+                <Main screenWidth={screenWidth}/>
                 <Footer />
             </div>
         )
     }
 }
+
 export default App

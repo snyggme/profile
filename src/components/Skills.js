@@ -1,43 +1,55 @@
 import React from 'react'
-import { Transition, TransitionGroup } from 'react-transition-group'
+import { Transition, CSSTransition } from 'react-transition-group'
 import { SkillsItem } from './SkillsItem'
 
+const durationStory = 400;
+const durationSkills = 800;
+
+const defaultStyleStory = {
+	transition: `opacity ${durationStory}ms ease-in-out`
+}
+const defaultStyleSkills = {
+	transition: `opacity ${durationSkills}ms ease-in-out`
+}
+  
+const transitionStyles = {
+	entering: { opacity: 0 },
+	entered:  { opacity: 1 }
+};
+
 const Skills = (props) => {
-	const { show, screenWidth } = props
+	const { screenWidth } = props
 
 	return (
 		<div style={{height: '100%'}}>
-			<Transition
-	            transitionName="example"
-	            transitionAppear={true}
-	            transitionEnter={false}
-			    transitionLeave={false}
-			    transitionAppearTimeout={1000}
-			    transitionEnterTimeout={0}
-			    transitionLeaveTimeout={0}>
-				<div className='skills-story'>
-					<div>
-						My name is Roman or just snygg. I am fan of programming and especially of frontend development. Strive to learn new technologies and competitive skills. Interested in backend development. Also i like computer hardware and to build impressive stuff with microcontrollers.
+			<Transition in={true} timeout={durationStory} appear > 
+				{ state => (
+					<div className='skills-story'
+						style={{
+							...defaultStyleStory,
+							...transitionStyles[state]
+						}}
+					>
+						<div>
+							My name is Roman or just snygg. I am fan of programming and especially of frontend development. Strive to learn new technologies and competitive skills. Interested in backend development. Also i like computer hardware and to build impressive stuff with microcontrollers.
+						</div>
 					</div>
-				</div>
+				)}
 			</Transition>		
-			{ show &&
-				<TransitionGroup
-	                transitionName="example"
-	                transitionAppear={true}
-	                transitionEnter={false}
-			        transitionLeave={false}
-			        transitionAppearTimeout={1000}
-			        transitionEnterTimeout={0}
-			        transitionLeaveTimeout={0}
-			        style={{display: 'block', position: 'relative', height: '100%'}}>
-					<div className='skills-grid'>
-						{skillsLogos.map((item, index) => 
-							<SkillsItem screenWidth={screenWidth} logo={item} key={index}/>
-						)}
-					</div>
-				</TransitionGroup>
-			}
+			<Transition in={true} timeout={durationSkills} appear >
+					{ state => (
+						<div style={{
+							display: 'block', position: 'relative', height: '100%', 
+							...defaultStyleSkills,
+							...transitionStyles[state]}}>
+							<div className='skills-grid'>
+								{skillsLogos.map((item, index) => 
+									<SkillsItem screenWidth={screenWidth} logo={item} key={index}/>
+								)}
+							</div>
+						</div>
+					)}
+			</Transition>
 		</div>
 	)	
 }

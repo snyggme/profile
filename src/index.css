@@ -513,28 +513,34 @@ i.icon-javascript-alt, i.icon-nodejs {
     transition: all 0.5s ease-in-out;
 }
 
-.project-container.move-to-left {
-/*    opacity: 0.01;
-    transform: translateX(1500px);*/
+/* .project-container.move-to-left {
+   opacity: 0.01;
+    transform: translateX(1500px);
 }
 
 .project-container.move-to-right {
-    /*opacity: 0.01;*/
-    /*transform: translateX(-1500px);*/
-    /*left: -100px;*/
+    opacity: 0.01;
+    transform: translateX(-1500px);
+    left: -100px;
 }
 
 .project-container.appear {
-/*    opacity: 1;
+   opacity: 1;
     -webkit-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;*/
-}
+    transition: all 1s ease-in-out;
+} */
 
 .project-imgs {
     align-self: center;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.project-imgs:hover {
+    transform: scale(1.05);
 }
 
 .project-definition {
+    color: black;
     width: 70%;
     height: 100%;
     margin: 0 auto;
