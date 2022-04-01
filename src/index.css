@@ -375,6 +375,12 @@ i.icon-javascript-alt, i.icon-nodejs {
     font-size: 2vw;
     z-index: 10;
 }
+
+.skills-story > div > b {
+    font-style: italic;
+    /* font-weight: 900; */
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
 /*
 ***********************************
     skills end

@@ -31,7 +31,7 @@ const Skills = (props) => {
 						}}
 					>
 						<div>
-							My name is Roman or just snygg. I am fan of programming and especially of frontend development. Strive to learn new technologies and competitive skills. Interested in backend development. Also i like computer hardware and to build impressive stuff with microcontrollers.
+							My name is <b>Roman</b> or just snygg. I am passionate about programming and especially <b>frontend development</b>. Strive to learn new technologies and competitive skills. Interested in <b>backend development</b>. Also I like computer hardware and to build impressive stuff with microcontrollers.
 						</div>
 					</div>
 				)}
@@ -56,14 +56,6 @@ const Skills = (props) => {
 
 const skillsLogos = [
 	{
-		class: 'icon-html5-alt',
-		name: 'HTML5'
-	},
-	{
-		class: 'icon-css3-alt',
-		name: 'CSS3'
-	},
-	{
 		class: 'icon-javascript-alt',
 		name: 'JavaScript'
 	},
@@ -72,20 +64,28 @@ const skillsLogos = [
 		name: 'React'
 	},
 	{
-		class: 'icon-jquery',
-		name: 'jQuery'
-	},
-	{
 		class: 'icon-nodejs',
 		name: 'NodeJS'
 	},
 	{
-		class: 'icon-bootstrap',
-		name: 'Bootstrap'
+		class: 'icon-html5-alt',
+		name: 'HTML5'
+	},
+	{
+		class: 'icon-css3-alt',
+		name: 'CSS3'
 	},
 	{
 		class: 'icon-sass',
 		name: 'SCSS'
+	},
+	{
+		class: 'icon-jquery',
+		name: 'jQuery'
+	},
+	{
+		class: 'icon-bootstrap',
+		name: 'Bootstrap'
 	},
 	{
 		class: 'icon-git',
