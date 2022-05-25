@@ -1,11 +1,7 @@
 export const getAnimationName = (currPath, nextPath) => {
-	console.log('curr path', currPath)
-	console.log('next path', nextPath)
 	const newCurrPath = currPath === '/' || currPath === '/profile' ? 'home' : currPath.substring(1)
 	const newNextPath = nextPath === '/' || nextPath === '/profile' ? 'home' : nextPath.substring(1)
-	console.log('new curr path', newCurrPath)
-	console.log('new next path', newNextPath)
-	console.log(obj[`${newCurrPath}_${newNextPath}`])
+
 	return obj[`${newCurrPath}_${newNextPath}`]
 } 
 

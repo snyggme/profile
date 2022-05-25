@@ -21,10 +21,9 @@ class App extends Component {
     handleClick = (e) => {
         const screenWidth = window.innerWidth
         const nextPath = getPathname(e.target.href)
-        // console.log('e.target.href', nextPath)
-        const currentPath = getPathname(window.location.pathname)
+        const currentPath = getPathname(window.location.pathname);
 
-        if (nextPath !== currentPath) {
+        if (nextPath !== currentPath && window.location.pathname !== '/profile') {
             if(screenWidth < 663) {
                 document.getElementById('reverse-lines').click()
 
@@ -47,9 +46,7 @@ class App extends Component {
     }
 
     render() {
-        let { newStyle, nextPath, disableLinks, showContent, screenWidth } = this.state
-        // console.log('next pathname',window.location.pathname)
-        // console.log(getAnimationName('/', getPathname(window.location.pathname)))
+        let { newStyle, nextPath, disableLinks, screenWidth } = this.state
         if (nextPath === '' && getPathname(window.location.pathname) !== '/profile' && screenWidth > 663) {
             newStyle = {
                 animation: getAnimationName('/home', getPathname(window.location.pathname))
@@ -62,7 +59,6 @@ class App extends Component {
                         handleClick={this.handleClick} />
                 <div className='main-background' style={newStyle}
                         onAnimationEnd={() => { 
-                            console.log('animation end')
                             this.setState({ 
                                 disableLinks: false
                             }) 
