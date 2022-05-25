@@ -1,6 +1,7 @@
 import React from 'react'
-import { Transition, CSSTransition } from 'react-transition-group'
+import { Transition } from 'react-transition-group'
 import { SkillsItem } from './SkillsItem'
+import { skillsLogos } from '../helpers/network'
 
 const durationStory = 400;
 const durationSkills = 800;
@@ -53,44 +54,5 @@ const Skills = (props) => {
 		</div>
 	)	
 }
-
-const skillsLogos = [
-	{
-		class: 'icon-javascript-alt',
-		name: 'JavaScript'
-	},
-	{
-		class: 'icon-reactjs',
-		name: 'React'
-	},
-	{
-		class: 'icon-nodejs',
-		name: 'NodeJS'
-	},
-	{
-		class: 'icon-html5-alt',
-		name: 'HTML5'
-	},
-	{
-		class: 'icon-css3-alt',
-		name: 'CSS3'
-	},
-	{
-		class: 'icon-sass',
-		name: 'SCSS'
-	},
-	{
-		class: 'icon-jquery',
-		name: 'jQuery'
-	},
-	{
-		class: 'icon-bootstrap',
-		name: 'Bootstrap'
-	},
-	{
-		class: 'icon-git',
-		name: 'Git'
-	}
-]
 
 export default Skills
